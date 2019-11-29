@@ -1,0 +1,75 @@
+.container{
+    position: absolute; /* To place the text on the image*/
+    height: 100%;
+    align-content: center;
+}
+
+.footercontainer{
+    position: relative;
+}
+
+.card{
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 270px;
+    width: 400px;
+    background-color: #d2e2f9;
+    box-shadow: 5px 5px 20px 5px #283555;
+}
+
+.social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #283555;
+}
+
+.social_icon span:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3{
+    color: #283555;
+}
+
+.social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #283555;
+    color: white;
+    border:0 !important;
+}
+
+input:focus{
+    outline: #283555 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember{
+    color: dimgrey;
+}
+
+.remember input
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{
+    color: white;
+    background-color: #283555;
+    width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
