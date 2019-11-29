@@ -1,0 +1,19 @@
+footer{
+  background: #283555;
+  color: white;
+}
+
+.container{
+  padding-top: 20px;
+  margin-left: 160px;
+}
+
+.container p{
+  font-size: 13px;
+}
+
+.icon{
+  width: auto;
+  height: 25px;
+  padding-right: 5px;
+}
