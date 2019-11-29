@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* Add a black background color to the top navigation */
+.topnav{
+    background-color: #283555;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav #logo {
+    float: left;
+    padding: 5px 15% 4px 0px;
+}
+
+.topnav #loginImg{
+    float: right;
+    padding: 10px 0px 0px 30px;
+}
+
+.topnav #login {
+    float: right;
+    padding: 21px 50px 18px 25px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul#menuItems li a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 21px 20px 18px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+}
+
+#claimNow:hover, #yourRights:hover, #contact:hover, #about:hover, #faq:hover, #login:hover{
+    border-bottom: 3px solid #d2e2f9;
+}
+
+ul#menuItems li a.selected{
+    border-bottom: 3px solid #d2e2f9;
+}
