@@ -3,12 +3,12 @@ footer{
   color: white;
 }
 
-.footercontainer{
-  padding-top: 20px;
+footer .container{
+  padding-top: 10px;
   margin-left: 160px;
 }
 
-.container p{
+footer .container p{
   font-size: 13px;
 }
 
