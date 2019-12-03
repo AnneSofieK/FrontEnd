@@ -51,16 +51,16 @@
               <div class="line"></div>
             </div>
             <div class="row">
-              <div class="dot" id="active"></div>
-            </div>
-            <div class="row">
-              <div class="line" id="active"></div>
-            </div>
-            <div class="row">
               <div class="dot"></div>
             </div>
             <div class="row">
               <div class="line"></div>
+            </div>
+            <div class="row">
+              <div class="dot" id="active"></div>
+            </div>
+            <div class="row">
+              <div class="line" id="active"></div>
             </div>
             <div class="row">
               <div class="dot"></div>
@@ -76,16 +76,16 @@
             <div class="row">
               <p>Attachments</p>
             </div>
-            <div class="row" id="active">
+            <div class="row">
               <h1>2</h1>
             </div>
-            <div class="row" id="active">
+            <div class="row">
               <p>Ticket Information</p>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <h1>3</h1>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <p>Driver Information</p>
             </div>
             <div class="row">
@@ -101,50 +101,54 @@
         </div>
       </div>
       <div class="col-10">
-        <form class="form">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Control Fee Notice No.</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" >
-            <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Reason Code</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option value"1">01 You do not have a valid parking permit</option>
-                <option value"2">02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant</option>
-                <option value"3">03 You have parked outside the marked spaces, or you have parked inconveniently</option>
-                <option value"4">04  You have parked somewhere on site where parking is prohibited</option>
-                <option value"5">05  Your have exceeded your parking time according to the time you set on your parking disc</option>
-                <option value"6">06  You have no parking disc, it cannot be read, or you have more than one indication of time</option>
-                <option value"7">07 You have reset your parking disc and continued to park</option>
-                <option value"8">08 Your parking ticket has expired or is invalid</option>
-                <option value"9">09 You have no valid and verifiable payment to the parking area</option>
-                <option value"10">10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit</option>
-                <option value"11">11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited</option>
-                <option value"12">12 You have parked in violation of one of the signposted parking rules</option>
-              </select> 
-            <small id="emailHelp" class="form-text text-muted">The code is a number between 1 and 12. You can find it under "Reason" just below the control fee notice number.
-            </small>
-          </div>
-          <div class="form-group">
-              <label for="exampleInputLicense">License Plate</label>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DK</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" value="DK">DK</a>
-                    <a class="dropdown-item" value="D">D</a>
-                    <a class="dropdown-item" value="S">S</a>
-                  </div>
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          <form class="form">
+            <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverName">Driver's First Name</label>
+                <input type="text" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverSurname">Driver of the vehicle surname</label>
+                <input type="text" class="form-control" id="inputPassword4">
+              </div>
+            </div>  
+            <div class="form-row" id="caption">
+                <small id="emailHelp" class="form-text text-muted">
+                  PLEASE NOTE: We need the name of the person who was the driver
+                  of the vehicle when the control fee notice was issued. The driver may
+                  be different to the vehicle owner, but this is not relevant to the
+                  control fee.
+                </small>
+            </div>        
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  <small id="emailHelp" class="form-text text-muted">
+                    Street name and house number of the driver of the vehicle.
+                  </small>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPC">Post Code</label>
+                <input type="text" class="form-control" id="inputZip">
               </div>
             </div>
-            <div class="buttons">
-              <a class="btn btn-primary btn-lg active" href="DriverInfo.html">Continue</a>
-              <a class="btn btn-link" href="Attachments.html">Back</a>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+              </div>
             </div>
-        </form>
+            <button type="submit" class="btn btn-primary">Submit button Example</button>
+            <div class="buttons">
+                <a class="btn btn-primary btn-lg active" href="DriverInfo.html">Continue</a>
+                <a class="btn btn-link" href="Attachments.html">Back</a>
+              </div>
+          </form>
       </div>
     </div>
   </div>
