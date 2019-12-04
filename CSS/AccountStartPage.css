@@ -1,11 +1,11 @@
-.row.content{height: 750px}
+.row.content{height: 900px}
 
 #sidebar{
-    width: 600px;
     border: 5px solid white;
     text-align: center;
     background-color: #283555;
     color: white;
+    height: 100%;
 }
 
 #username{
@@ -28,3 +28,68 @@
     font-size: 16px;
     color: #283555;
 }
+
+td{
+    border: 6px solid #283555;
+    padding: 15px;
+    width: 350px;
+    background-color: #283555;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 20px 5px #283555;
+}
+
+table, tr{
+    border-collapse: separate;
+    border-spacing: 15px 0px;
+    padding-top: 20px;
+    table-layout: fixed;
+}
+
+.header {
+    font-size: 25px;
+    color: white;
+}
+
+.statusheader{
+    font-size: 18px;
+    color: white;
+}
+
+.status{
+    background-color: #d2e2f9;
+    border-radius: 20px;
+    font-size: 22px;
+}
+
+#case label {
+    font-size: 15px;
+    color: white;
+    padding-top: 12px;
+}
+
+.inprogress{
+    padding-left: 62px;
+    padding-right: 35px;
+}
+
+progress{
+    width: 300px;
+}
+
+.infobox{
+    margin-top: 45px;
+    text-align: left;
+    border: 2px solid #283555;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: white;
+    font-size: 18px;
+}
+
+.boxheader{
+    padding-top: 10px;
+}
+

@@ -15,11 +15,11 @@
     <meta charset="UTF-8">
     <title>Claimy</title>
 
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
 
-            $("#editProfile").click(function () {
+            $("").click(function () {
                 $.ajax({
                     type: "GET",
                     dataType: "json",
@@ -28,6 +28,43 @@
                     alert(JSON.stringify(data));
                 });
             });
+
+            $("#editProfile").click(function () {
+               $.ajax({
+                 type: "GET",
+                 dataType: "json",
+                 url:"http://jsonplaceholder.typicode.com/albums"
+               }).then(function (data) {
+                   for (var i = 0; i < data.length; i++)
+                   {
+                       addCase(data[i], i)
+                   }
+               });
+            });
+
+            function addCase(data, i)
+            {
+                document.getElementById("case").innerHTML +=
+                    "<td>\n" +
+                    "<p class=\"header\">Case </p>\n" +
+                    "<p class=\"statusheader\">Status</p>\n" +
+                    "<p class=\"status\">Waiting</p>\n" +
+                    "<label>Sent</label>\n" +
+                    "<label class=\"inprogress\">In progress</label>\n" +
+                    "<label>Clarified</label>\n" +
+                    "<p></p>\n" +
+                    "<progress value=\"1\" max=\"5\"></progress>\n" +
+                    "<p></p>" +
+                    "   <div class=\"infobox\">\n" +
+                    "      <p class=\"boxheader\">6400 Sønderborg</p>\n" +
+                    "      <p>Alskærvej 4</p>\n" +
+                    "      <p>22. November 2019</p>\n" +
+                    "   </div>\n" +
+                    "</td>";
+
+                $(document.getElementsByClassName("header")[i]).append(data.id);
+
+            }
 
         });
     </script>
@@ -55,7 +92,6 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
@@ -78,9 +114,11 @@
         </div>
         <!-- cases -->
         <div class="col-sm-9">
-            <div id="cases">
+            <table id="cases">
+                    <tr id="case">
 
-            </div>
+                    </tr>
+            </table>
         </div>
     </div>
 </body>
