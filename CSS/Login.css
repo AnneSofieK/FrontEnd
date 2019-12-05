@@ -1,11 +1,7 @@
 .container{
-    position: absolute; /* To place the text on the image*/
     height: 100%;
     align-content: center;
-}
-
-.footercontainer{
-    position: relative;
+    margin-top: -250px;
 }
 
 .card{

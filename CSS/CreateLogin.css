@@ -1,0 +1,66 @@
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.w3-container {
+    height: 900px;
+    text-align: center;
+}
+
+.CreateContent{
+    margin-top: 100px;
+    height: 75%;
+    width: 46%;
+    background-color: #d2e2f9;
+    text-align: center;
+    display: inline-block;
+}
+
+#loginEmail {
+    margin-left: 16%;
+    margin-right: 20px;
+    height: 50px;
+    width: 300px;
+}
+
+#loginPassword{
+    height: 50px;
+    width: 300px;
+}
+
+.head{
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.registerNowbtn {
+    background-color: #283555;
+    color: white;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.facebookbtn {
+    background-color: #283555;
+    color: white;
+    width: 250px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.or{
+    color: grey;
+}
+
+.fa-facebook-square{
+    margin-right: 8px;
+}
