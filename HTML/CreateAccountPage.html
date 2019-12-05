@@ -7,85 +7,56 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/MenuBar.css" type="text/css">
-    <link rel="stylesheet" href="CSS/onTopImage.css" type="text/css">
-    <link rel="stylesheet" href="CSS/footerStyle.css" type="text/css">
-    <link rel="stylesheet" href="CSS/AccountStartPage.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/MenuBar.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/footerStyle.css" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../CSS/CreateLogin.css" type="text/css">
 
     <meta charset="UTF-8">
     <title>Claimy</title>
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
-    <script>
-        $(document).ready(function(){
-
-            $("#editProfile").click(function () {
-                $.ajax({
-                    type: "GET",
-                    dataType: "json",
-                    url:"http://jsonplaceholder.typicode.com/albums"
-                }).then(function(data){
-                    alert(JSON.stringify(data));
-                });
-            });
-
-        });
-    </script>
 
 </head>
 
-
-<!-- Top nav bar -->
 <body>
 <div id="main">
     <div id="menubar" class="topnav">
         <ul id="menuItems">
             <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-            <li><a id="logo" href="HomePage.html"><img src="Images/claimy.PNG" width="250" height="60" border="0"></a></li>
-            <li><a id="claimNow" href="ClaimNowPage.html">Claim Now</a></li>
+            <li><a id="logo" href="HomePage.html"><img src="../Images/claimy.PNG" width="250" height="60" border="0"></a></li>
+            <li><a class="selected" id="claimNow" href="Attachments.html">Claim Now</a></li>
             <li><a id="yourRights" href="YourRightsPage.html">Your rights</a></li>
             <li><a id="contact" href="ContactPage.html">Contact</a></li>
             <li><a id="about" href="AboutPage.html">About</a></li>
             <li><a id="faq" href="FAQPage.html">FAQ</a></li>
             <li><a id="login" href="LoginPage.html">Log in</a></li>
-            <li><a id="loginImg" href="LoginPage.html"><img src="Images/login.png" width="41" height="40" border="0"></a></li>
+            <li><a id="loginImg" href="LoginPage.html"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </ul>
     </div>
 </div>
 
-<!-- Optional JavaScript -->
+<!-- Create account -->
+<div class="w3-container">
+    <div class="CreateContent">
+        <p class="head">Create Login</p>
+        <form class="form-inline">
+            <input id="loginEmail" type="text" class="form-control" placeholder="Your Email">
+            <input id="loginPassword" type="text" class="form-control" placeholder="Your Password">
+        </form>
+        <button class="registerNowbtn">Register now</button>
+        <p class="or">or use</p>
+        <button class="facebookbtn"><i class="fa fa-facebook-square"></i>Login with Facebook</button>
+    </div>
+</div>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
-<!-- Account page -->
-<body>
-    <div class="row content">
-        <!-- profile sidebar -->
-        <div id="sidebar" class="col-sm-3">
-            <p id="username">Username</p>
-            <img id="profileImage" src="Images/profileImage.png" width="100" height="100">
-            <div class="profileContent">
-                <p>Name: </p>
-                <p>Email: </p>
-                <p>Phone no:</p>
-                <p>Address: </p>
-                <p>Zip: </p>
-            </div>
-            <button id="editProfile">Edit</button>
-        </div>
-        <!-- cases -->
-        <div class="col-sm-9">
-            <div id="cases">
-
-            </div>
-        </div>
-    </div>
-</body>
-
-<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
@@ -124,9 +95,9 @@
                     <h5>Follow</h5>
                 </div>
                 <div class="row">
-                    <img src="Images/fb.png" alt="" class="icon">
-                    <img src="Images/twitter.png" alt="" class="icon">
-                    <img src="Images/instagram.png" alt="" class="icon">
+                    <img src="../Images/fb.png" alt="" class="icon">
+                    <img src="../Images/twitter.png" alt="" class="icon">
+                    <img src="../Images/instagram.png" alt="" class="icon">
                 </div>
             </div>
             <div class="col">

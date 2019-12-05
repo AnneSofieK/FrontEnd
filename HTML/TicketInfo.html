@@ -7,19 +7,15 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/MenuBar.css" type="text/css">
-  <link rel="stylesheet" href="CSS/footerStyle.css" type="text/css">
-  <link rel="stylesheet" href="CSS/FormLayout.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/MenuBar.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/footerStyle.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/FormLayout.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/TicketInfo.css" type="text/css">
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
 
   <meta charset="UTF-8">
   <title>Attachments</title>
-
-  <style>
-    .input-group{
-      padding-top: 15px;
-    }
-  </style>
-
 </head>
 
 <body>
@@ -27,22 +23,20 @@
     <div id="menubar" class="topnav">
       <ul id="menuItems">
         <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-        <li><a id="logo" href="HomePage.html"><img src="Images/claimy.PNG" width="250" height="60" border="0"></a></li>
-        <li><a id="claimNow" href="ClaimNowPage.html">Claim Now</a></li>
+        <li><a id="logo" href="HomePage.html"><img src="../Images/claimy.PNG" width="250" height="60" border="0"></a></li>
+        <li><a id="claimNow" href="Attachments.html">Claim Now</a></li>
         <li><a id="yourRights" href="YourRightsPage.html">Your rights</a></li>
         <li><a id="contact" href="ContactPage.html">Contact</a></li>
         <li><a id="about" href="AboutPage.html">About</a></li>
         <li><a id="faq" href="FAQPage.html">FAQ</a></li>
         <li><a id="login" href="LoginPage.html">Log in</a></li>
-        <li><a id="loginImg" href="LoginPage.html"><img src="Images/login.png" width="41" height="40" border="0"></a></li>
+        <li><a id="loginImg" href="LoginPage.html"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
 
       </ul>
     </div>
   </div>
 
-  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
@@ -51,6 +45,12 @@
       <div class="col-2" id="side-menu">
         <div class="row">
           <div class="col-1">
+            <div class="row">
+              <div class="dot"></div>
+            </div>
+            <div class="row">
+              <div class="line"></div>
+            </div>
             <div class="row">
               <div class="dot" id="active"></div>
             </div>
@@ -69,24 +69,18 @@
             <div class="row">
               <div class="line"></div>
             </div>
-            <div class="row">
-              <div class="dot"></div>
-            </div>
-            <div class="row">
-              <div class="line"></div>
-            </div>
           </div>
           <div class="col-1">
-            <div class="row" id="active">
+            <div class="row">
               <h1>1</h1>
             </div>
-            <div class="row" id="active">
+            <div class="row">
               <p>Attachments</p>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <h1>2</h1>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <p>Ticket Information</p>
             </div>
             <div class="row">
@@ -104,26 +98,54 @@
           </div>
         </div>
         <div class="row" id="active">
-          <img src="Images/trustpilot.png" class="trustpilot" alt="">
+          <img src="../Images/trustpilot.png" class="trustpilot" alt="">
         </div>
       </div>
       <div class="col-10">
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">Attach a picture of your ticket</h1>
-            <p class="lead">To provide additional evidence, you can also attach a picture of your parking</p>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile02">
-                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Picture</label>
+        <form class="form">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Control Fee Notice No.</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" >
+            <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Reason Code</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option value"1">01 You do not have a valid parking permit</option>
+                <option value"2">02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant</option>
+                <option value"3">03 You have parked outside the marked spaces, or you have parked inconveniently</option>
+                <option value"4">04  You have parked somewhere on site where parking is prohibited</option>
+                <option value"5">05  Your have exceeded your parking time according to the time you set on your parking disc</option>
+                <option value"6">06  You have no parking disc, it cannot be read, or you have more than one indication of time</option>
+                <option value"7">07 You have reset your parking disc and continued to park</option>
+                <option value"8">08 Your parking ticket has expired or is invalid</option>
+                <option value"9">09 You have no valid and verifiable payment to the parking area</option>
+                <option value"10">10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit</option>
+                <option value"11">11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited</option>
+                <option value"12">12 You have parked in violation of one of the signposted parking rules</option>
+              </select> 
+            <small id="emailHelp" class="form-text text-muted">The code is a number between 1 and 12. You can find it under "Reason" just below the control fee notice number.
+            </small>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputLicense">License Plate</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DK</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" value="DK">DK</a>
+                    <a class="dropdown-item" value="D">D</a>
+                    <a class="dropdown-item" value="S">S</a>
+                  </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button">
               </div>
             </div>
             <div class="buttons">
-              <a class="btn btn-primary btn-lg active" href="TicketInfo.html">Continue</a>
-              <a class="btn btn-link" href="HomePage.html">Back</a>
+              <a class="btn btn-primary btn-lg active" href="DriverInfo.html">Continue</a>
+              <a class="btn btn-link" href="Attachments.html">Back</a>
             </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -166,9 +188,9 @@
           <h5>Follow</h5>
         </div>
         <div class="row">
-          <img src="Images/fb.png" alt="" class="icon">
-          <img src="Images/twitter.png" alt="" class="icon">
-          <img src="Images/instagram.png" alt="" class="icon">
+          <img src="../Images/fb.png" alt="" class="icon">
+          <img src="../Images/twitter.png" alt="" class="icon">
+          <img src="../Images/instagram.png" alt="" class="icon">
         </div>
       </div>
       <div class="col">

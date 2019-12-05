@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+.row.content{height: 900px}
+
+#sidebar{
+    border: 5px solid white;
+    text-align: center;
+    background-color: #283555;
+    color: white;
+    height: 100%;
+}
+
+#username{
+    padding-top: 30px;
+    font-size: 25px;
+}
+
+
+.profileContent
+{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.userInfo {
+    font-family: "Montserrat Medium", sans-serif;
+}
+
+.info{
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+#editProfile{
+    width: 65px;
+    height: 35px;
+    font-size: 16px;
+    color: #283555;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+td{
+    border: 6px solid #283555;
+    padding: 15px;
+    width: 350px;
+    background-color: #283555;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 18px 3px #283555;
+}
+
+table, tr{
+    border-collapse: separate;
+    border-spacing: 15px 0px;
+    padding-top: 20px;
+    table-layout: fixed;
+}
+
+.header {
+    font-size: 25px;
+    color: white;
+}
+
+.statusheader{
+    font-size: 18px;
+    color: white;
+}
+
+.status{
+    background-color: #d2e2f9;
+    border-radius: 20px;
+    font-size: 22px;
+}
+
+#case label {
+    font-size: 15px;
+    color: white;
+    padding-top: 12px;
+}
+
+.inprogress{
+    padding-left: 62px;
+    padding-right: 35px;
+}
+
+progress{
+    width: 300px;
+}
+
+.infobox{
+    margin-top: 45px;
+    text-align: left;
+    border: 2px solid #283555;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: white;
+    font-size: 18px;
+}
+
+.boxheader{
+    padding-top: 10px;
+}
+
+.addCasebtn {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    background-color: #283555;
+    height: 115px;
+    width: 115px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 16px 1px #283555;
+    margin-top: 160px;
+    margin-left: -55px;
+}
+
+.addCaseTR {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+
+}
