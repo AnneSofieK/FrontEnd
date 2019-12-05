@@ -34,6 +34,7 @@ $(document).ready(function(){
         });
     });
 
+    
     function addCase(data, i)
     {
         document.getElementById("case").innerHTML +=
