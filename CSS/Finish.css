@@ -1,0 +1,20 @@
+.lead{
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.my-4{
+    margin-top: 0rem!important;
+}
+
+.jumbotron .row{
+    margin-bottom: 1rem;
+}
+
+.jumbotron p{
+    margin-bottom: 0rem;
+}
+
+.img-thumbnail{
+    width: 200px;
+}

@@ -7,13 +7,16 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/MenuBar.css" type="text/css">
-  <link rel="stylesheet" href="CSS/footerStyle.css" type="text/css">
-  <link rel="stylesheet" href="CSS/FormLayout.css" type="text/css">
-  <link rel="stylesheet" href="CSS/DriverInfo.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/MenuBar.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/footerStyle.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/FormLayout.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/Finish.css" type="text/css">
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
 
   <meta charset="UTF-8">
-  <title>Attachments</title>
+  <title>Finish</title>
+
 </head>
 
 <body>
@@ -21,22 +24,21 @@
     <div id="menubar" class="topnav">
       <ul id="menuItems">
         <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-        <li><a id="logo" href="HomePage.html"><img src="Images/claimy.PNG" width="250" height="60" border="0"></a></li>
-        <li><a id="claimNow" href="ClaimNowPage.html">Claim Now</a></li>
+        <li><a id="logo" href="HomePage.html"><img src="../Images/claimy.PNG" width="250" height="60" border="0"></a></li>
+        <li><a id="claimNow" href="Attachments.html">Claim Now</a></li>
         <li><a id="yourRights" href="YourRightsPage.html">Your rights</a></li>
         <li><a id="contact" href="ContactPage.html">Contact</a></li>
         <li><a id="about" href="AboutPage.html">About</a></li>
         <li><a id="faq" href="FAQPage.html">FAQ</a></li>
         <li><a id="login" href="LoginPage.html">Log in</a></li>
-        <li><a id="loginImg" href="LoginPage.html"><img src="Images/login.png" width="41" height="40" border="0"></a></li>
+        <li><a id="loginImg" href="LoginPage.html"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
 
       </ul>
     </div>
   </div>
 
-  <!-- Optional JavaScript -->
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
@@ -58,16 +60,16 @@
               <div class="line"></div>
             </div>
             <div class="row">
-              <div class="dot" id="active"></div>
-            </div>
-            <div class="row">
-              <div class="line" id="active"></div>
-            </div>
-            <div class="row">
               <div class="dot"></div>
             </div>
             <div class="row">
               <div class="line"></div>
+            </div>
+            <div class="row">
+              <div class="dot" id="active"></div>
+            </div>
+            <div class="row">
+              <div class="line" id="active"></div>
             </div>
           </div>
           <div class="col-1">
@@ -83,73 +85,91 @@
             <div class="row">
               <p>Ticket Information</p>
             </div>
-            <div class="row" id="active">
+            <div class="row">
               <h1>3</h1>
             </div>
-            <div class="row" id="active">
+            <div class="row">
               <p>Driver Information</p>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <h1>4</h1>
             </div>
-            <div class="row">
+            <div class="row" id="active">
               <p>Finish</p>
             </div>
           </div>
         </div>
         <div class="row" id="active">
-          <img src="Images/trustpilot.png" class="trustpilot" alt="">
+          <img src="../Images/trustpilot.png" class="trustpilot" alt="">
         </div>
       </div>
       <div class="col-10">
-          <form class="form">
-            <div class="form-row">
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverName">Driver's First Name</label>
-                <input type="text" class="form-control" id="inputEmail4">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Your claim</h1>
+            <p class="lead">Ticket Information</p>
+            <hr class="my-4">
+            <div class="row">
+              <div class="col-5">
+                <p>Control Fee No.</p>
+                <p>Fetch Information...</p>
               </div>
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverSurname">Driver of the vehicle surname</label>
-                <input type="text" class="form-control" id="inputPassword4">
-              </div>
-            </div>  
-            <div class="form-row" id="caption">
-                <small id="emailHelp" class="form-text text-muted">
-                  PLEASE NOTE: We need the name of the person who was the driver
-                  of the vehicle when the control fee notice was issued. The driver may
-                  be different to the vehicle owner, but this is not relevant to the
-                  control fee.
-                </small>
-            </div>        
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                  <small id="emailHelp" class="form-text text-muted">
-                    Street name and house number of the driver of the vehicle.
-                  </small>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPC">Post Code</label>
-                <input type="text" class="form-control" id="inputZip">
+              <div class="col-5">
+                <p>License Plate</p>
+                <p>Fetch Information...</p>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+            <p>Reason Code</p>
+            <p>Fetch Information...</p>
+            
+            <p class="lead">Driver Information</p>
+            <hr class="my-4">
+            <div class="row">
+              <div class="col-5">
+                <p>Driver's First Name</p>
+                <p>Fetch Information...</p>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+              <div class="col-5">
+                <p>Driver of the vehicle Surname</p>
+                <p>Fetch Information...</p>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit button Example</button>
+            <div class="row">
+              <div class="col-5">
+                <p>Address</p>
+                <p>Fetch Information...</p>
+              </div>
+              <div class="col-5">
+                <p>Postcode</p>
+                <p>Fetch Information...</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p>City</p>
+                <p>Fetch Information...</p>
+              </div>
+              <div class="col-5">
+                <p>Email</p>
+                <p>Fetch Information...</p>
+              </div>
+            </div>
+            <p class="lead">Photos</p>
+            <hr class="my-4">
+            <div class="row">
+              <div class="col-5">
+                <img src="..." alt="Fetch photos" class="img-thumbnail">
+              </div>
+              <div class="col-5">
+                <img src="..." alt="Fetch photos" class="img-thumbnail">
+              </div>
+            </div>
             <div class="buttons">
-                <a class="btn btn-primary btn-lg active" href="Finish.html">Continue</a>
-                <a class="btn btn-link" href="TicketInfo.html">Back</a>
-              </div>
-          </form>
+              <a class="btn btn-primary btn-lg active" href="#">Continue</a>
+              <a class="btn btn-link" href="DriverInfo.html">Back</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -192,9 +212,9 @@
           <h5>Follow</h5>
         </div>
         <div class="row">
-          <img src="Images/fb.png" alt="" class="icon">
-          <img src="Images/twitter.png" alt="" class="icon">
-          <img src="Images/instagram.png" alt="" class="icon">
+          <img src="../Images/fb.png" alt="" class="icon">
+          <img src="../Images/twitter.png" alt="" class="icon">
+          <img src="../Images/instagram.png" alt="" class="icon">
         </div>
       </div>
       <div class="col">
