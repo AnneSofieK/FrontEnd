@@ -17,7 +17,6 @@ function setLogin(){
 function LoginPath(){
     if(sessionStorage.getItem("token") == null)
     {
-        alert("Token er null");
         location.href = "LoginPage.html";
     }
     else

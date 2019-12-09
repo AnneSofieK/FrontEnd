@@ -14,6 +14,8 @@
 
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
   <script src="../JS/LoginMenubar.js"></script>
+  <script src="../JS/FormData.js"></script>
+  <script src="../JS/TicketInfo.js"></script>
 
   <meta charset="UTF-8">
   <title>Ticket Information</title>
@@ -106,24 +108,24 @@
         <form class="form">
           <div class="form-group">
             <label for="exampleInputEmail1">Control Fee Notice No.</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" >
+            <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" onfocusout="validateControlNo()">
             <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Reason Code</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option value"1">01 You do not have a valid parking permit</option>
-                <option value"2">02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant</option>
-                <option value"3">03 You have parked outside the marked spaces, or you have parked inconveniently</option>
-                <option value"4">04  You have parked somewhere on site where parking is prohibited</option>
-                <option value"5">05  Your have exceeded your parking time according to the time you set on your parking disc</option>
-                <option value"6">06  You have no parking disc, it cannot be read, or you have more than one indication of time</option>
-                <option value"7">07 You have reset your parking disc and continued to park</option>
-                <option value"8">08 Your parking ticket has expired or is invalid</option>
-                <option value"9">09 You have no valid and verifiable payment to the parking area</option>
-                <option value"10">10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit</option>
-                <option value"11">11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited</option>
-                <option value"12">12 You have parked in violation of one of the signposted parking rules</option>
+                <option value="1">01 You do not have a valid parking permit</option>
+                <option value="2">02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant</option>
+                <option value="3">03 You have parked outside the marked spaces, or you have parked inconveniently</option>
+                <option value="4">04  You have parked somewhere on site where parking is prohibited</option>
+                <option value="5">05  Your have exceeded your parking time according to the time you set on your parking disc</option>
+                <option value="6">06  You have no parking disc, it cannot be read, or you have more than one indication of time</option>
+                <option value="7">07 You have reset your parking disc and continued to park</option>
+                <option value="8">08 Your parking ticket has expired or is invalid</option>
+                <option value="9">09 You have no valid and verifiable payment to the parking area</option>
+                <option value="10">10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit</option>
+                <option value="11">11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited</option>
+                <option value="12">12 You have parked in violation of one of the signposted parking rules</option>
               </select> 
             <small id="emailHelp" class="form-text text-muted">The code is a number between 1 and 12. You can find it under "Reason" just below the control fee notice number.
             </small>
@@ -132,18 +134,18 @@
               <label for="exampleInputLicense">License Plate</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DK</button>
+                  <button id="plateCountry" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DK</button>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" value="DK">DK</a>
                     <a class="dropdown-item" value="D">D</a>
                     <a class="dropdown-item" value="S">S</a>
                   </div>
                 </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" onfocusout="validateLicensePlate()">
               </div>
             </div>
             <div class="buttons">
-              <a class="btn btn-primary btn-lg active" href="DriverInfo.html">Continue</a>
+              <a class="btn btn-primary btn-lg active" onclick="saveTicketInfo()">Continue</a>
               <a class="btn btn-link" href="Attachments.html">Back</a>
             </div>
         </form>
