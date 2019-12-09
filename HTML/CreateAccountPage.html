@@ -16,7 +16,8 @@
     <title>Claimy</title>
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
-
+    <script src="../JS/CreateAccountPage.js"></script>
+    <script src="../JS/LoginMenubar.js"></script>
 </head>
 
 <body>
@@ -30,8 +31,8 @@
             <li><a id="contact" href="ContactPage.html">Contact</a></li>
             <li><a id="about" href="AboutPage.html">About</a></li>
             <li><a id="faq" href="FAQPage.html">FAQ</a></li>
-            <li><a id="login" href="LoginPage.html">Log in</a></li>
-            <li><a id="loginImg" href="LoginPage.html"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
+            <li><a id="login" onclick="LoginPath()">Log in</a></li>
+            <li><a id="loginImg" onclick="LoginPath()"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </ul>
     </div>
@@ -42,8 +43,8 @@
     <div class="CreateContent">
         <p class="head">Create Login</p>
         <form class="form-inline">
-            <input id="loginEmail" type="text" class="form-control" placeholder="Your Email">
-            <input id="loginPassword" type="text" class="form-control" placeholder="Your Password">
+            <input id="loginEmail" type="text" class="form-control" placeholder="Your Email" onfocusout="emailValidation()">
+            <input id="loginPassword" type="password" class="form-control" placeholder="Your Password" onfocusout="passwordValidation()">
         </form>
         <button class="registerNowbtn">Register now</button>
         <p class="or">or use</p>
