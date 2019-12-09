@@ -1,6 +1,6 @@
 .image{
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .parkingImage{
@@ -12,7 +12,6 @@
 .onTopImage{
   position: absolute; /* To place the text on the image*/
   top: 100px; /* The exact location of the text from the top of the image*/
-  width: 100%;
   left: 50px; /* Other beautification stuff */
 }
 

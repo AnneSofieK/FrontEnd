@@ -1,0 +1,49 @@
+.image{
+    position: relative;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1rem;
+    background: lightblue;
+}
+
+.check{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.circle{
+    height: 630px;
+    width: 630px;
+    text-align: center;
+    margin: auto auto;
+    border-radius: 50%;
+    background: #283555;
+    padding: 1rem;
+}
+    
+p{
+    color: white;
+    font-size: 20px;
+}
+
+h2{
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.claimbtn {
+    background: #283555;
+    border: 2px solid white;
+    margin-top: 30px;
+    padding: 2px;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
