@@ -43,12 +43,12 @@ function validateControlNo() {
 
     if(/^\d{7}(?:\d{2})?$/.test(controlNo.value))
     {
-        controlNo.style.borderColor = "lightgrey";
+        controlNo.classList.replace("is-invalid","is-valid");
         return true;
     }
     else
     {
-        controlNo.style.borderColor = "red";
+        controlNo.classList.add("is-invalid");
         return false;
     }
 }
@@ -73,12 +73,12 @@ function validateLicensePlate(){
 
     if(reg.test(licensePlate.value))
     {
-        licensePlate.style.borderColor = "lightgrey";
+        licensePlate.classList.replace("is-invalid","is-valid");
         return true;
     }
     else
     {
-        licensePlate.style.borderColor = "red";
+        licensePlate.classList.add("is-invalid");
         return false;
     }
 }
