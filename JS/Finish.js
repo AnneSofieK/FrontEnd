@@ -15,17 +15,17 @@ $(document).ready(function () {
     let driverSurname = document.getElementById("driverSurname");
     driverSurname.innerText = sessionStorage.getItem("driverSurname");
 
-    let address = document.getElementById("address");
-    address.innerText = sessionStorage.getItem("address");
+    let driverAddress = document.getElementById("driverAddress");
+    driverAddress.innerText = sessionStorage.getItem("driverAddress");
 
-    let postCode = document.getElementById("postCode");
-    postCode.innerText = sessionStorage.getItem("postCode");
+    let driverPC = document.getElementById("driverPC");
+    driverPC.innerText = sessionStorage.getItem("driverPC");
 
-    let city = document.getElementById("city");
-    city.innerText = sessionStorage.getItem("city");
+    let driverCity = document.getElementById("driverCity");
+    driverCity.innerText = sessionStorage.getItem("driverCity");
 
-    let email = document.getElementById("email");
-    email.innerText = sessionStorage.getItem("email");
+    let driverEmail = document.getElementById("driverEmail");
+    driverEmail.innerText = sessionStorage.getItem("driverEmail");
 });
 
 function send_Claim() {
