@@ -46,14 +46,7 @@ function isAllValid() {
     }
   });
 
-  if(validateAddress() && validateEmail() && validatePC() && isValid == true)
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  return validateAddress() && validateEmail() && validatePC() && isValid === true;
 }
 
 function validateTextOnly(element) {
