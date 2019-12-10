@@ -20,7 +20,8 @@
 
     <!-- jQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
-    <script src="../JS/LoginPage.js" type="text/javascript"></script>
+    <script src="../JS/LoginMenubar.js"></script>
+    <script src="../JS/LoginPage.js"></script>
 
 </head>
 
@@ -36,8 +37,8 @@
             <li><a id="contact" href="ContactPage.html">Contact</a></li>
             <li><a id="about" href="AboutPage.html">About</a></li>
             <li><a id="faq" href="FAQPage.html">FAQ</a></li>
-            <li><a class="selected" id="login" href="LoginPage.html">Log in</a></li>
-            <li><a id="loginImg" href="LoginPage.html"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
+            <li><a class="selected" id="login" onclick="LoginPath()">Log in</a></li>
+            <li><a id="loginImg" onclick="LoginPath()"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
         </ul>
     </div>
 </div>
@@ -73,20 +74,21 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input id="LoginUsername" type="text" class="form-control" placeholder="Username" onfocus="removeErrorMsg()">
 
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input id="LoginPassword" type="password" class="form-control" placeholder="Password" onfocus="removeErrorMsg()">
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Remember Me
                         </div>
                     </form>
                     <button id="loginbtn" class="btn float-right login_btn">Login</button>
+                    <p id="loginMsg"></p>
                 </div>
             </div>
         </div>

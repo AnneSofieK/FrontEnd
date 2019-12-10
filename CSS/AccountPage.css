@@ -42,6 +42,16 @@
     margin-top: 20px;
 }
 
+#deleteAccount{
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    color: #283555;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 315px;
+}
+
 td{
     border: 6px solid #283555;
     padding: 15px;
