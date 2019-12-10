@@ -15,6 +15,11 @@
     margin-bottom: 0rem;
 }
 
+.input-info{
+    font-family: "Montserrat 600", sans-serif;
+    letter-spacing: 1px;
+}
+
 .img-thumbnail{
     width: 200px;
 }
