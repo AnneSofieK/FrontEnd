@@ -53,24 +53,42 @@ function addCase(data, i)
         "<p></p>" +
         "   <div class=\"infobox\">\n" +
         "      <p class=\"boxheader\"></p>\n" +
-        "      <p>Alskærvej 4</p>\n" +
+        "      <p class='street'></p>\n" +
         "      <p class='date'></p>\n" +
         "   </div>\n" +
         "</td>";
 
     $(document.getElementsByClassName("header")[i]).append(data.caseID);
     $(document.getElementsByClassName("status")[i]).append(data.status);
+    $(document.getElementsByClassName("street")[i]).append(data.street);
     $(document.getElementsByClassName("boxheader")[i]).append(data.zip+" "+data.city);
-    $(document.getElementsByClassName("date")[i]).append(getDate(data.date));
+    $(document.getElementsByClassName("date")[i]).append(getDate(data.date)); //TODO display date "more beautifully"
 
-    if(data.caseID == 2) /* TODO change according to status */
+    if(data.caseID == 2) // TODO change according to status
         {
             $(document.getElementsByClassName("progressbar")[i]).val(3);
         }
 }
 
 function getDate(date) {
+    date = new Date(date);
+    year = date.getFullYear();
 
+    alert(date);
+    let monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    month = monthNames[date.getMonth()];
+    dt = date.getDate();
+
+    if (dt < 10) {
+        dt = '0' + dt;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    return dt+". "+month+" "+year;
 }
 
 function deleteAccount() {
