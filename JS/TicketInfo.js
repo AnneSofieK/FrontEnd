@@ -3,11 +3,11 @@ $(document).ready(function () {
     if(sessionStorage.getItem("controlNo") != null)
     {
         document.getElementById("controlNo").value = sessionStorage.getItem("controlNo");
-
         document.getElementById("exampleFormControlSelect1").value = sessionStorage.getItem("reasonCode");
-
         document.getElementById("plateCountry").innerText = sessionStorage.getItem("plateCountry");
         document.getElementById("licensePlate").value = sessionStorage.getItem("licensePlate");
+        validateLicensePlate();
+        validateControlNo();
     }
 
     //Setting the text on the dropdown button to the selected dropdown-item
