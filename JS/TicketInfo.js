@@ -26,7 +26,6 @@ function saveTicketInfo()
         //Saving reasonCode
         let r = document.getElementById("exampleFormControlSelect1");
         let reasonCode = r.options[r.selectedIndex];
-        sessionStorage.setItem("reasonCodeText", reasonCode.text);
         sessionStorage.setItem("reasonCode", reasonCode.value);
 
         //Saving license plate
