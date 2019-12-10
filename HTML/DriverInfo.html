@@ -12,148 +12,166 @@
   <link rel="stylesheet" href="../CSS/FormLayout.css" type="text/css">
 
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
+  <script src="../JS/DriverInfo.js" type="text/javascript"></script>
   <script src="../JS/LoginMenubar.js"></script>
-  <script src="../JS/DriverInfo.js"></script>
 
   <meta charset="UTF-8">
   <title>Driver Information</title>
 </head>
 
 <body>
-  <div id="main">
-    <div id="menubar" class="topnav">
-      <ul id="menuItems">
-        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-        <li><a id="logo" href="HomePage.html"><img src="../Images/claimy.PNG" width="250" height="60" border="0"></a></li>
-        <li><a id="claimNow" href="Attachments.html">Claim Now</a></li>
-        <li><a id="yourRights" href="YourRightsPage.html">Your rights</a></li>
-        <li><a id="contact" href="ContactPage.html">Contact</a></li>
-        <li><a id="about" href="AboutPage.html">About</a></li>
-        <li><a id="faq" href="FAQPage.html">FAQ</a></li>
-        <li><a id="login" onclick="LoginPath()">Log in</a></li>
-        <li><a id="loginImg" onclick="LoginPath()"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
+<div id="main">
+  <div id="menubar" class="topnav">
+    <ul id="menuItems">
+      <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+      <li><a id="logo" href="HomePage.html"><img src="../Images/claimy.PNG" width="250" height="60" border="0"></a></li>
+      <li><a id="claimNow" href="Attachments.html">Claim Now</a></li>
+      <li><a id="yourRights" href="YourRightsPage.html">Your rights</a></li>
+      <li><a id="contact" href="ContactPage.html">Contact</a></li>
+      <li><a id="about" href="AboutPage.html">About</a></li>
+      <li><a id="faq" href="FAQPage.html">FAQ</a></li>
+      <li><a id="login" onclick="LoginPath()">Log in</a></li>
+      <li><a id="loginImg" onclick="LoginPath()"><img src="../Images/login.png" width="41" height="40" border="0"></a></li>
 
-      </ul>
-    </div>
+    </ul>
   </div>
+</div>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <div class="container" id="container-box">
-    <div class="row">
-      <div class="col-2" id="side-menu">
-        <div class="row">
-          <div class="col-1">
-            <div class="row">
-              <div class="dot"></div>
-            </div>
-            <div class="row">
-              <div class="line"></div>
-            </div>
-            <div class="row">
-              <div class="dot"></div>
-            </div>
-            <div class="row">
-              <div class="line"></div>
-            </div>
-            <div class="row">
-              <div class="dot" id="active"></div>
-            </div>
-            <div class="row">
-              <div class="line" id="active"></div>
-            </div>
-            <div class="row">
-              <div class="dot"></div>
-            </div>
-            <div class="row">
-              <div class="line"></div>
+<div class="container" id="container-box">
+  <div class="row">
+    <div class="col-2" id="side-menu">
+      <div class="row">
+        <div class="col-1">
+          <div class="row">
+            <div class="dot"></div>
+          </div>
+          <div class="row">
+            <div class="line"></div>
+          </div>
+          <div class="row">
+            <div class="dot"></div>
+          </div>
+          <div class="row">
+            <div class="line"></div>
+          </div>
+          <div class="row">
+            <div class="dot" id="active"></div>
+          </div>
+          <div class="row">
+            <div class="line" id="active"></div>
+          </div>
+          <div class="row">
+            <div class="dot"></div>
+          </div>
+          <div class="row">
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="row">
+            <h1>1</h1>
+          </div>
+          <div class="row">
+            <p>Attachments</p>
+          </div>
+          <div class="row">
+            <h1>2</h1>
+          </div>
+          <div class="row">
+            <p>Ticket Information</p>
+          </div>
+          <div class="row" id="active">
+            <h1>3</h1>
+          </div>
+          <div class="row" id="active">
+            <p>Driver Information</p>
+          </div>
+          <div class="row">
+            <h1>4</h1>
+          </div>
+          <div class="row">
+            <p>Finish</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="active">
+        <img src="../Images/trustpilot.png" class="trustpilot" alt="">
+      </div>
+    </div>
+    <div class="col-10">
+      <form class="needs-validation" action="Finish.html" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6" id="caption-container">
+            <label for="inputDriverName">Driver's First Name</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              It can not be empty.
             </div>
           </div>
-          <div class="col-1">
-            <div class="row">
-              <h1>1</h1>
-            </div>
-            <div class="row">
-              <p>Attachments</p>
-            </div>
-            <div class="row">
-              <h1>2</h1>
-            </div>
-            <div class="row">
-              <p>Ticket Information</p>
-            </div>
-            <div class="row" id="active">
-              <h1>3</h1>
-            </div>
-            <div class="row" id="active">
-              <p>Driver Information</p>
-            </div>
-            <div class="row">
-              <h1>4</h1>
-            </div>
-            <div class="row">
-              <p>Finish</p>
+          <div class="form-group col-md-6" id="caption-container">
+            <label for="inputDriverSurname">Driver of the vehicle surname</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              It can not be empty.
             </div>
           </div>
         </div>
-        <div class="row" id="active">
-          <img src="../Images/trustpilot.png" class="trustpilot" alt="">
+        <div class="form-row" id="caption">
+          <small id="emailHelp" class="form-text text-muted">
+            PLEASE NOTE: We need the name of the person who was the driver
+            of the vehicle when the control fee notice was issued. The driver may
+            be different to the vehicle owner, but this is not relevant to the
+            control fee.
+          </small>
         </div>
-      </div>
-      <div class="col-10">
-          <form class="form">
-            <div class="form-row">
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverName">Driver's First Name</label>
-                <input type="text" class="form-control" id="inputEmail4">
-              </div>
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverSurname">Driver of the vehicle surname</label>
-                <input type="text" class="form-control" id="inputPassword4">
-              </div>
-            </div>  
-            <div class="form-row" id="caption">
-                <small id="emailHelp" class="form-text text-muted">
-                  PLEASE NOTE: We need the name of the person who was the driver
-                  of the vehicle when the control fee notice was issued. The driver may
-                  be different to the vehicle owner, but this is not relevant to the
-                  control fee.
-                </small>
-            </div>         
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                  <small id="emailHelp" class="form-text text-muted">
-                    Street name and house number of the driver of the vehicle.
-                  </small>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPC">Post Code</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              It can not be empty.
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
+            <small id="emailHelp" class="form-text text-muted">
+              Street name and house number of the driver of the vehicle.
+            </small>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPC">Post Code</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              It can not be empty.
             </div>
-            <button type="submit" class="btn btn-primary">Submit button Example</button>
-            <div class="buttons">
-                <a class="btn btn-primary btn-lg active" href="Finish.html">Continue</a>
-                <a class="btn btn-link" href="TicketInfo.html">Back</a>
-              </div>
-          </form>
-      </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              It can not be empty.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              It has to be a valid email.
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary  btn-lg active">Submit button</button>
+        <div class="buttons">
+          <a class="btn btn-primary btn-lg active" href="Finish.html">Continue</a>
+          <a class="btn btn-link" href="TicketInfo.html">Back</a>
+        </div>
+      </form>
     </div>
   </div>
+</div>
 </body>
 <footer>
   <div class="container">
