@@ -26,6 +26,17 @@ $(document).ready(function () {
 
     let driverEmail = document.getElementById("driverEmail");
     driverEmail.innerText = sessionStorage.getItem("driverEmail");
+
+    var images = document.getElementsByClassName("imagePreview");
+    var imagesS = JSON.parse(sessionStorage.getItem("images"));
+    images[0].src = imagesS[0]; 
+
+    if(images.length != imagesS.length){
+        for (let i = 1; i < imagesS.length; i++) {
+        addImg();
+        images[i].src = imagesS[i]; 
+        }
+    }
 });
 
 function send_Claim() {
@@ -36,4 +47,9 @@ function send_Claim() {
     else{
         location.href = "ClaimSent.html";
     }
+}
+
+function addImg(){
+    var pictures = document.getElementById("pictures");
+    pictures.insertAdjacentHTML("beforeend",'<div class="col-3 imgUp"><img class="imagePreview"></div>');
 }
