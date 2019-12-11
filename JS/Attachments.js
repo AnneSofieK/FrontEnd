@@ -1,6 +1,12 @@
 $(document).ready(function () {
     //Checks if the information already has been filled out
-    if(sessionStorage.getItem("image1") != null)
+    if(sessionStorage.getItem("images0") != null)
+    {
+      var images = document.getElementsByClassName("imagePreview");
+      images[0].src = sessionStorage.getItem("images0");
+    }
+
+    if(sessionStorage.getItem("image2") != null)
     {
       var images = document.getElementsByClassName("imagePreview");
       images[0].src = sessionStorage.getItem("image1");
@@ -11,39 +17,37 @@ function saveImages(params) {
     var images = document.getElementsByClassName("imagePreview");
 
     for (let i = 0; i < images.length; i++) {
-        alert(images[i]); 
+        let name = "images"+i;
+        alert(name);
+        sessionStorage.setItem(name, images[0].src);
     }
-
+    
     location.href = "TicketInfo.html";
 }
 
 function addImg(){
     var img = document.getElementsByClassName("imgAdd");
     var pictures = document.getElementsByClassName("imagePreview");
-    img[0].insertAdjacentHTML("beforebegin",'<div class="col-3 imgUp"><img class="imagePreview"><label class="btn btn-primary" id="upload">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+    img[0].insertAdjacentHTML("beforebegin",'<div class="col-3 imgUp"><img class="imagePreview"><label class="btn btn-primary" id="upload">Upload<input type="file" class="img" value="Upload Photo" onchange="loadImg(this)" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
 }
 
 $(document).on("click", "i.del" , function() {
     $(this).parent().remove();
 });
 
-$(function() {
-    $(document).on("change",".uploadFile", function()
-    {
-        var uploadFile = $(this);
-        var files = !!this.files ? this.files : [];
-        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-        if (/^image/.test( files[0].type)){ // only image file
+function loadImg(element) {
+    if (element.files[0]) {
+        if (/^image/.test( element.files[0].type)){
             var reader = new FileReader();
-            reader.readAsDataURL(files[0]); // read the local file
 
-            reader.onloadend = function(){ 
-                uploadFile.closest(".imgUp").find('.imagePreview').css("content", "url("+this.result+")");
+            reader.onload = function (e) {
+                element.parentElement.parentElement.querySelector(".imagePreview").src =  e.target.result;
             }
+
+            reader.readAsDataURL(element.files[0]);
         }
         else{
             alert("You can only upload pictures");
         }
-    });
-});
+    }
+}
