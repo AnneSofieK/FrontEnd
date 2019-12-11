@@ -113,13 +113,16 @@
             <p class="lead">To provide additional evidence, you can also attach a picture of your parking</p>
             <div class="row">
               <div class="col-3 imgUp">
-                <img class="imagePreview">
+                <img class="imagePreview" src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg">
                 <label class="btn btn-primary" id="upload">
-                  Upload<input type="file" class="uploadFile img" value="Upload Photo" onchange="loadImg(this)" style="width: 0px;height: 0px;overflow: hidden;">
+                  Upload<input type="file" class="uploadFile img" id="input-img" onchange="loadImg(this)" style="width: 0px;height: 0px;overflow: hidden;">
                 </label>
               </div>
               <i class="fa fa-plus imgAdd" onclick="addImg()"></i>
             </div>
+            <div id="invalid">
+                You must submit at least your ticket picture.
+              </div>
             <div class="buttons">
               <a class="btn btn-primary btn-lg active" onclick="saveImages()">Continue</a>
               <a class="btn btn-link" href="HomePage.html">Back</a>

@@ -2,6 +2,14 @@
   padding-top: 15px;
 }
 
+#invalid{
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+    visibility: hidden;
+}
+
 .col-3{
     max-width: 24%;
 }
