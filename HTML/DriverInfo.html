@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../CSS/MenuBar.css" type="text/css">
   <link rel="stylesheet" href="../CSS/footerStyle.css" type="text/css">
   <link rel="stylesheet" href="../CSS/FormLayout.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/DriverInfo.css" type="text/css">
 
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
   <script src="../JS/DriverInfo.js" type="text/javascript"></script>
@@ -162,7 +163,14 @@
               Invalid email.
             </div>
           </div>
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="contact-check" checked onchange="checkContact()">
+              <label class="custom-control-label" for="contact-check">I, as the driver of the vehicle, am filling up this form.</label>
+            </div>
+          </div>
         </div>
+
         <div class="buttons">
           <a class="btn btn-primary btn-lg active" onclick="saveDriverInfo()">Continue</a>
           <a class="btn btn-link" href="TicketInfo.html">Back</a>
