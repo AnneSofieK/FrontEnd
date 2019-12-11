@@ -111,3 +111,79 @@ function validateEmail(){
     return false;
   }
 }
+
+function checkContact() {
+  let checkContact = document.getElementById("contact-check");
+
+  if(checkContact.checked == false){
+    var buttons = document.getElementsByClassName("buttons");
+    buttons[0].insertAdjacentHTML("beforebegin",
+    '<div id="optional">'+
+    '<hr class="my-4">'+
+    '<div class="form-row">'+
+      '<div class="form-group col-md-6" id="caption-container">'+
+        '<label for="inputFirstName">First Name</label>'+
+        '<input type="text" class="form-control" id="inputFirstName" required onfocusout="validateTextOnly(this)">' +
+        '<div class="invalid-feedback">' +
+          'Invalid firstname.' +
+        '</div>' +
+      '</div>' +
+      '<div class="form-group col-md-6" id="caption-container">' +
+        '<label for="inputSurname">Surname</label>' +
+        '<input type="text" class="form-control" id="inputSurname" required onfocusout="validateTextOnly(this)">' +
+        '<div class="invalid-feedback">' +
+          'Invalid surname.' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="form-row" id="caption">' +
+      '<small id="emailHelp" class="form-text text-muted">' +
+        'PLEASE NOTE: We need the name of the person who was the driver ' +
+        'of the vehicle when the control fee notice was issued. The driver may' +
+        'be different to the vehicle owner, but this is not relevant to the' +
+        'control fee.' +
+      '</small>' +
+    '</div>' +
+    '<div class="form-row">' +
+      '<div class="form-group col-md-6">' +
+        '<label for="inputAddress">Address</label>' +
+        '<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required onfocusout="validateAddress()">' +
+        '<div class="invalid-feedback">' +
+          'Invalid address.' +
+        '</div>' +
+        '<small id="emailHelp" class="form-text text-muted">' +
+          'Street name and house number of the driver of the vehicle.' +
+        '</small>' +
+      '</div>' +
+      '<div class="form-group col-md-6">' +
+        '<label for="inputPC">Post Code</label>' +
+        '<input type="text" class="form-control" id="inputPC" required onfocusout="validatePC()">' +
+        '<div class="invalid-feedback">' +
+          'Invalid postal code. It should be four digits' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="form-row">' +
+      '<div class="form-group col-md-6">' +
+        '<label for="inputCity">City</label>' +
+        '<input type="text" class="form-control" id="inputCity" required onfocusout="validateTextOnly(this)">' +
+        '<div class="invalid-feedback">' +
+          'Invalid city.' +
+        '</div>' +
+      '</div>' +
+      '<div class="form-group col-md-6">' +
+        '<label for="inputEmail">Email</label>' +
+        '<input type="email" class="form-control" id="inputEmail" required onfocusout="validateEmail()">' +
+        '<div class="invalid-feedback">' +
+          'Invalid email.' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>'
+    );
+  }
+  else{
+    let optional = document.getElementById("optional");
+    optional.parentNode.removeChild(optional);
+  }
+}
