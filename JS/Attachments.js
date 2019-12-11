@@ -1,27 +1,24 @@
 $(document).ready(function () {
     //Checks if the information already has been filled out
-    if(sessionStorage.getItem("images0") != null)
+    if(sessionStorage.getItem("images") != null)
     {
       var images = document.getElementsByClassName("imagePreview");
-      images[0].src = sessionStorage.getItem("images0");
+      var imagesS = JSON.parse(sessionStorage.getItem("images"));
+      images[0].src = imagesS[0];
     }
 
-    if(sessionStorage.getItem("image2") != null)
-    {
-      var images = document.getElementsByClassName("imagePreview");
-      images[0].src = sessionStorage.getItem("image1");
-    }
 });
 
 function saveImages(params) {
     var images = document.getElementsByClassName("imagePreview");
+    var imagesSrc = [];
 
     for (let i = 0; i < images.length; i++) {
-        let name = "images"+i;
-        alert(name);
-        sessionStorage.setItem(name, images[0].src);
+        imagesSrc.push(images[i].src);
     }
     
+    sessionStorage.setItem("images",JSON.stringify(imagesSrc));
+
     location.href = "TicketInfo.html";
 }
 
