@@ -9,14 +9,26 @@ $(document).ready(function () {
     document.getElementById("inputCity").value = sessionStorage.getItem("driverCity");
     document.getElementById("inputEmail").value = sessionStorage.getItem("driverEmail");
 
-    isAllValid();
+    if(sessionStorage.getItem("Firstname") != null)
+    {
+      document.getElementById("contact-check").checked = false;
+      checkContact();
+      document.getElementById("Firstname").value = sessionStorage.getItem("Firstname");
+      document.getElementById("Surname").value = sessionStorage.getItem("Surname");
+      document.getElementById("Address").value = sessionStorage.getItem("Address");
+      document.getElementById("PC").value = sessionStorage.getItem("PC");
+      document.getElementById("City").value = sessionStorage.getItem("City");
+      document.getElementById("Email").value = sessionStorage.getItem("Email");
+    }
+    allInfoIsValid();
   }
+
 });
 
 //Click function for continue button on step 3 in the form
 function saveDriverInfo() {
 
-  if(isAllValid()) {
+  if(allInfoIsValid()) {
 
     //Saving all driverInformation
     sessionStorage.setItem("driverName", document.getElementById("inputDriverName").value);
@@ -26,17 +38,50 @@ function saveDriverInfo() {
     sessionStorage.setItem("driverCity", document.getElementById("inputCity").value);
     sessionStorage.setItem("driverEmail", document.getElementById("inputEmail").value);
 
+    if(!document.getElementById("contact-check").checked)
+    {
+      //Saving all customer information
+      sessionStorage.setItem("Firstname", document.getElementById("Firstname").value);
+      sessionStorage.setItem("Surname", document.getElementById("Surname").value);
+      sessionStorage.setItem("Address", document.getElementById("Address").value);
+      sessionStorage.setItem("PC", document.getElementById("PC").value);
+      sessionStorage.setItem("City", document.getElementById("City").value);
+      sessionStorage.setItem("Email", document.getElementById("Email").value);
+    }
+
     //Go to step 4 in form
     location.href = "Finish.html";
   }
 }
 
-function isAllValid() {
-  let elements = [document.getElementById("inputDriverName"), document.getElementById("inputDriverSurname"), document.getElementById("inputCity")];
+function allInfoIsValid() {
+  let elements = [
+      document.getElementById("inputDriverName"),
+      document.getElementById("inputDriverSurname"),
+      document.getElementById("inputCity"),
+      document.getElementById("inputAddress"),
+      document.getElementById("inputEmail"),
+      document.getElementById("inputPC")
+  ];
+
+  //Checking if driver and customer info is the same. If not the elements which contains the customer info is added
+  if(!document.getElementById("contact-check").checked)
+  {
+    elements.push(
+        document.getElementById("Firstname"),
+        document.getElementById("Surname"),
+        document.getElementById("City"),
+        document.getElementById("Address"),
+        document.getElementById("Email"),
+        document.getElementById("PC")
+    );
+  }
+
   let isValid = false;
 
   elements.forEach(element => {
-    if(validateTextOnly(element))
+    alert(element.id);
+    if(validate(element))
     {
       isValid = true;
     }
@@ -46,71 +91,34 @@ function isAllValid() {
     }
   });
 
-  return validateAddress() && validateEmail() && validatePC() && isValid === true;
+  return isValid;
 }
 
-function validateTextOnly(element) {
+function validate(element){
 
-    if(/^[a-zA-ZÆØÅæøå\s]*$/.test(element.value) && element.value != "")
-    {
-      element.classList.remove("is-invalid");
-      element.classList.add("is-valid");
-      return true;
-    }
-    else
-    {
-      element.classList.add("is-invalid");
-      return false;
-    }
-}
+  regex = new RegExp(element.getAttribute("pattern"));
 
-function validateAddress(){
-  let address = document.getElementById("inputAddress");
-
-  if(/^[a-zA-Z0-9ÆØÅæøå.\s]*$/.test(address.value) && address.value != "")
+  if(regex.test(element.value) && element.value.length !== 0)
   {
-    address.classList.remove("is-invalid");
-    address.classList.add("is-valid");
+    setMarker(element, true);
     return true;
+  }
+  setMarker(element,false);
+  return false;
+}
+
+function setMarker(element, isValid) {
+  if(isValid)
+  {
+    element.classList.remove("is-invalid");
+    element.classList.add("is-valid");
   }
   else
   {
-    address.classList.add("is-invalid");
-    return false;
+    element.classList.add("is-invalid");
   }
 }
 
-function validatePC(){
-  let pc = document.getElementById("inputPC");
-
-  if(/^\d{4}$/.test(pc.value))
-  {
-    pc.classList.remove("is-invalid");
-    pc.classList.add("is-valid");
-    return true;
-  }
-  else
-  {
-    pc.classList.add("is-invalid");
-    return false;
-  }
-}
-
-function validateEmail(){
-  let email = document.getElementById("inputEmail");
-
-  if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
-  {
-    email.classList.remove("is-invalid");
-    email.classList.add("is-valid");
-    return true;
-  }
-  else
-  {
-    email.classList.add("is-invalid");
-    return false;
-  }
-}
 
 function checkContact() {
   let checkContact = document.getElementById("contact-check");
@@ -123,41 +131,32 @@ function checkContact() {
     '<div class="form-row">'+
       '<div class="form-group col-md-6" id="caption-container">'+
         '<label for="inputFirstName">First Name</label>'+
-        '<input type="text" class="form-control" id="inputFirstName" required onfocusout="validateTextOnly(this)">' +
+        '<input type="text" class="form-control" id="Firstname" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid firstname.' +
         '</div>' +
       '</div>' +
       '<div class="form-group col-md-6" id="caption-container">' +
         '<label for="inputSurname">Surname</label>' +
-        '<input type="text" class="form-control" id="inputSurname" required onfocusout="validateTextOnly(this)">' +
+        '<input type="text" class="form-control" id="Surname" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid surname.' +
         '</div>' +
       '</div>' +
     '</div>' +
     '<div class="form-row" id="caption">' +
-      '<small id="emailHelp" class="form-text text-muted">' +
-        'PLEASE NOTE: We need the name of the person who was the driver ' +
-        'of the vehicle when the control fee notice was issued. The driver may' +
-        'be different to the vehicle owner, but this is not relevant to the' +
-        'control fee.' +
-      '</small>' +
     '</div>' +
     '<div class="form-row">' +
       '<div class="form-group col-md-6">' +
         '<label for="inputAddress">Address</label>' +
-        '<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required onfocusout="validateAddress()">' +
+        '<input type="text" class="form-control" id="Address" placeholder="1234 Main St" pattern="^[a-zA-Z0-9ÆØÅæøå.\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid address.' +
         '</div>' +
-        '<small id="emailHelp" class="form-text text-muted">' +
-          'Street name and house number of the driver of the vehicle.' +
-        '</small>' +
       '</div>' +
       '<div class="form-group col-md-6">' +
         '<label for="inputPC">Post Code</label>' +
-        '<input type="text" class="form-control" id="inputPC" required onfocusout="validatePC()">' +
+        '<input type="text" class="form-control" id="PC" pattern="^\\d{4}$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid postal code. It should be four digits' +
         '</div>' +
@@ -166,14 +165,14 @@ function checkContact() {
     '<div class="form-row">' +
       '<div class="form-group col-md-6">' +
         '<label for="inputCity">City</label>' +
-        '<input type="text" class="form-control" id="inputCity" required onfocusout="validateTextOnly(this)">' +
+        '<input type="text" class="form-control" id="City" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid city.' +
         '</div>' +
       '</div>' +
       '<div class="form-group col-md-6">' +
         '<label for="inputEmail">Email</label>' +
-        '<input type="email" class="form-control" id="inputEmail" required onfocusout="validateEmail()">' +
+        '<input type="email" class="form-control" id="Email" pattern="^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid email.' +
         '</div>' +
