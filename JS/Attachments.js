@@ -4,7 +4,14 @@ $(document).ready(function () {
     {
       var images = document.getElementsByClassName("imagePreview");
       var imagesS = JSON.parse(sessionStorage.getItem("images"));
-      images[0].src = imagesS[0];
+      images[0].src = imagesS[0]; 
+
+      if(images.length != imagesS.length){
+          for (let i = 1; i < imagesS.length; i++) {
+            addImg();
+            images[i].src = imagesS[i];     
+          }
+      }
     }
 
 });
