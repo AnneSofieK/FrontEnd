@@ -31,7 +31,6 @@ function saveImages(params) {
 
 function addImg(){
     var img = document.getElementsByClassName("imgAdd");
-    var pictures = document.getElementsByClassName("imagePreview");
     img[0].insertAdjacentHTML("beforebegin",'<div class="col-3 imgUp"><img class="imagePreview"><label class="btn btn-primary" id="upload">Upload<input type="file" class="img" value="Upload Photo" onchange="loadImg(this)" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
 }
 
