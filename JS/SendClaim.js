@@ -1,21 +1,26 @@
+/**
+ * Post the claim information to the server
+ */
 function sendClaim() {
 
+    //All claim info
     let ticketNo = parseInt(sessionStorage.getItem("ticketNo"));
-    let fineSum = sessionStorage.getItem("fineSum");
+    let fineSum = parseInt(sessionStorage.getItem("fineSum"));
     let date = sessionStorage.getItem("date");
     let reason = sessionStorage.getItem("reasonCode");
     let obsStart = sessionStorage.getItem("obsStart");
     let obsEnd = sessionStorage.getItem("obsEnd");
     let status = "Claim received";
+    let zip = parseInt(sessionStorage.getItem("parkingZip"));
+    let street = sessionStorage.getItem("parkingStreet");
     let customerID = parseInt(sessionStorage.getItem("customerID"));
     let cvr = parseInt(sessionStorage.getItem("cvr"));
     let isManuel = false;
-    let zip = parseInt(sessionStorage.getItem("parkingZip"));
-    let streetName = sessionStorage.getItem("parkingStreet");
 
     let data = {ticketNo: ticketNo, fineSum: fineSum, date: date, reason: reason, obsStart: obsStart, obsEnd: obsEnd,
-        status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zip: zip, streetName: streetName};
+        status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zip: zip, street: street};
 
+    //creating claim in the database
     $.ajax({
         url: "http://localhost:5000/cases",
         type: 'POST',
@@ -30,14 +35,20 @@ function sendClaim() {
     });
 }
 
+/**
+ * Post the customer information to the server
+ * @param createAccountIsChecked - Bool that informs if the customer wishes to create an account or not
+ */
 function createCustomer(createAccountIsChecked) {
 
+    //All customer information
     var name = sessionStorage.getItem("driverName") + " " + sessionStorage.getItem("driverSurname");
     var email = sessionStorage.getItem("driverEmail");
     var phoneNo = parseInt(sessionStorage.getItem("driverPhoneNo"));
     var streetName = sessionStorage.getItem("driverAddress");
     var zip = parseInt(sessionStorage.getItem("driverPC"));
 
+    //If the driver was different from the customer filling out the form, the data is changed to the customer info
     if(sessionStorage.getItem("Firstname") !== null)
     {
         name = sessionStorage.getItem("Firstname")+" "+sessionStorage.getItem("Surname");
@@ -49,6 +60,7 @@ function createCustomer(createAccountIsChecked) {
 
     let data = {Name: name, Email: email, PhoneNo: phoneNo, StreetName: streetName, username: email, zip: zip};
 
+    //Creating the customer in the database
     $.ajax({
         url: "http://localhost:5000/customers",
         type: 'POST',
