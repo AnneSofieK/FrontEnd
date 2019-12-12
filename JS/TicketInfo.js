@@ -3,9 +3,16 @@ $(document).ready(function () {
     if(sessionStorage.getItem("controlNo") != null) //TODO add new info
     {
         document.getElementById("controlNo").value = sessionStorage.getItem("controlNo");
-        document.getElementById("exampleFormControlSelect1").value = sessionStorage.getItem("reasonCode");
+        document.getElementById("reasonCode").value = sessionStorage.getItem("reasonCode");
         document.getElementById("plateCountry").innerText = sessionStorage.getItem("plateCountry");
         document.getElementById("licensePlate").value = sessionStorage.getItem("licensePlate");
+        document.getElementById("cvr").value = sessionStorage.getItem("cvr");
+        document.getElementById("date").value = sessionStorage.getItem("date");
+        document.getElementById("sum").value = sessionStorage.getItem("sum");
+        document.getElementById("observationStart").value = sessionStorage.getItem("observationStart");
+        document.getElementById("observationEnd").value = sessionStorage.getItem("observationEnd");
+        document.getElementById("parkingAddress").value = sessionStorage.getItem("parkingAddress");
+        document.getElementById("parkingPC").value = sessionStorage.getItem("parkingPC");
         allTicketInfoIsValid()
     }
 
@@ -20,11 +27,18 @@ function saveTicketInfo()
 {
     if(allTicketInfoIsValid()) //TODO add all new info so it can be saved
     {
-        //Saving controlNo
-        sessionStorage.setItem("ticketNo", document.getElementById("controlNo").value);
+        //Saving all ticket info
+        sessionStorage.setItem("controlNo", document.getElementById("controlNo").value);
+        sessionStorage.setItem("cvr", document.getElementById("cvr").value);
+        sessionStorage.setItem("date", document.getElementById("date").value);
+        sessionStorage.setItem("sum", document.getElementById("sum").value);
+        sessionStorage.setItem("observationStart", document.getElementById("observationStart").value);
+        sessionStorage.setItem("observationEnd", document.getElementById("observationEnd").value);
+        sessionStorage.setItem("parkingAddress", document.getElementById("parkingAddress").value);
+        sessionStorage.setItem("parkingPC", document.getElementById("parkingPC").value);
 
         //Saving reasonCode
-        let r = document.getElementById("exampleFormControlSelect1");
+        let r = document.getElementById("reasonCode");
         let reasonCode = r.options[r.selectedIndex];
         sessionStorage.setItem("reasonCode", reasonCode.value);
 
@@ -40,10 +54,17 @@ function saveTicketInfo()
 function allTicketInfoIsValid() { //TODO add ticket info elements
     let elements = [
         document.getElementById("controlNo"),
-        document.getElementById("licensePlate")
+        document.getElementById("cvr"),
+        document.getElementById("date"),
+        document.getElementById("sum"),
+        document.getElementById("licensePlate"),
+        document.getElementById("observationStart"),
+        document.getElementById("observationEnd"),
+        document.getElementById("parkingAddress"),
+        document.getElementById("parkingPC")
     ];
 
-    validateElements(elements);
+    return validateElements(elements);
 }
 
 function changeRegex(element) {
