@@ -62,21 +62,29 @@ function addCase(data, i)
     $(document.getElementsByClassName("status")[i]).append(data.status);
     $(document.getElementsByClassName("street")[i]).append(data.street);
     $(document.getElementsByClassName("boxheader")[i]).append(data.zip+" "+data.city);
-    $(document.getElementsByClassName("date")[i]).append(getDate(data.date)); //TODO display date "more beautifully"
+    $(document.getElementsByClassName("date")[i]).append(getDate(data.date));
 
-    if(data.caseID == 2) // TODO change according to status
-        {
-            $(document.getElementsByClassName("progressbar")[i]).val(3);
-        }
+    let value;
+    switch (data.status) {
+        case "Claim received":
+            value = 1;
+            break;
+        case "Won":
+        case "Lost":
+            value = 5;
+        default:
+            value = 3;
+    }
+    $(document.getElementsByClassName("progressbar")[i]).val(3);
 }
 
 function getDate(date) {
     date = new Date(date);
     year = date.getFullYear();
 
-    let monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
+    let monthNames = ["", "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+
     month = monthNames[date.getMonth()];
     dt = date.getDate();
 
@@ -86,7 +94,6 @@ function getDate(date) {
     if (month < 10) {
         month = '0' + month;
     }
-
     return dt+". "+month+" "+year;
 }
 

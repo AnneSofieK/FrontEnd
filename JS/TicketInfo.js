@@ -1,13 +1,12 @@
 $(document).ready(function () {
     //Checks if the information already has been filled out
-    if(sessionStorage.getItem("controlNo") != null)
+    if(sessionStorage.getItem("controlNo") != null) //TODO add new info
     {
         document.getElementById("controlNo").value = sessionStorage.getItem("controlNo");
         document.getElementById("exampleFormControlSelect1").value = sessionStorage.getItem("reasonCode");
         document.getElementById("plateCountry").innerText = sessionStorage.getItem("plateCountry");
         document.getElementById("licensePlate").value = sessionStorage.getItem("licensePlate");
-        validateLicensePlate();
-        validateControlNo();
+        allTicketInfoIsValid()
     }
 
     //Setting the text on the dropdown button to the selected dropdown-item
@@ -19,10 +18,10 @@ $(document).ready(function () {
 //Click function for next button on step 2 in the form
 function saveTicketInfo()
 {
-    if(validate(document.getElementById("controlNo")) && validate(document.getElementById("licensePlate")))
+    if(allTicketInfoIsValid()) //TODO add all new info so it can be saved
     {
         //Saving controlNo
-        sessionStorage.setItem("controlNo", document.getElementById("controlNo").value);
+        sessionStorage.setItem("ticketNo", document.getElementById("controlNo").value);
 
         //Saving reasonCode
         let r = document.getElementById("exampleFormControlSelect1");
@@ -30,12 +29,21 @@ function saveTicketInfo()
         sessionStorage.setItem("reasonCode", reasonCode.value);
 
         //Saving license plate
-        sessionStorage.setItem("plateCountry", document.getElementById("plateCountry").innerText);
+        sessionStorage.setItem("plateCountry", document.getElementById("plateCountry").innerHTML);
         sessionStorage.setItem("licensePlate", document.getElementById("licensePlate").value);
 
         //Go to step 3 in form
         location.href = "DriverInfo.html";
     }
+}
+
+function allTicketInfoIsValid() { //TODO add ticket info elements
+    let elements = [
+        document.getElementById("controlNo"),
+        document.getElementById("licensePlate")
+    ];
+
+    validateElements(elements);
 }
 
 function changeRegex(element) {
@@ -55,5 +63,4 @@ function changeRegex(element) {
             break;
     }
     document.getElementById("licensePlate").pattern = reg;
-    alert(document.getElementById("licensePlate").pattern);
 }
