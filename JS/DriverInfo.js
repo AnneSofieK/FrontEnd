@@ -6,7 +6,7 @@ $(document).ready(function () {
     document.getElementById("inputDriverSurname").value = sessionStorage.getItem("driverSurname");
     document.getElementById("inputAddress").value = sessionStorage.getItem("driverAddress");
     document.getElementById("inputPC").value = sessionStorage.getItem("driverPC");
-    document.getElementById("inputCity").value = sessionStorage.getItem("driverCity");
+    document.getElementById("inputPhoneNo").value = sessionStorage.getItem("driverPhoneNo");
     document.getElementById("inputEmail").value = sessionStorage.getItem("driverEmail");
 
     if(sessionStorage.getItem("Firstname") != null)
@@ -17,7 +17,7 @@ $(document).ready(function () {
       document.getElementById("Surname").value = sessionStorage.getItem("Surname");
       document.getElementById("Address").value = sessionStorage.getItem("Address");
       document.getElementById("PC").value = sessionStorage.getItem("PC");
-      document.getElementById("City").value = sessionStorage.getItem("City");
+      document.getElementById("PhoneNo").value = sessionStorage.getItem("PhoneNo");
       document.getElementById("Email").value = sessionStorage.getItem("Email");
     }
     allInfoIsValid();
@@ -35,7 +35,7 @@ function saveDriverInfo() {
     sessionStorage.setItem("driverSurname", document.getElementById("inputDriverSurname").value);
     sessionStorage.setItem("driverAddress", document.getElementById("inputAddress").value);
     sessionStorage.setItem("driverPC", document.getElementById("inputPC").value);
-    sessionStorage.setItem("driverCity", document.getElementById("inputCity").value);
+    sessionStorage.setItem("driverPhoneNo", document.getElementById("inputPhoneNo").value);
     sessionStorage.setItem("driverEmail", document.getElementById("inputEmail").value);
 
     if(!document.getElementById("contact-check").checked)
@@ -45,7 +45,7 @@ function saveDriverInfo() {
       sessionStorage.setItem("Surname", document.getElementById("Surname").value);
       sessionStorage.setItem("Address", document.getElementById("Address").value);
       sessionStorage.setItem("PC", document.getElementById("PC").value);
-      sessionStorage.setItem("City", document.getElementById("City").value);
+      sessionStorage.setItem("PhoneNo", document.getElementById("PhoneNo").value);
       sessionStorage.setItem("Email", document.getElementById("Email").value);
     }
 
@@ -58,7 +58,7 @@ function allInfoIsValid() {
   let elements = [
       document.getElementById("inputDriverName"),
       document.getElementById("inputDriverSurname"),
-      document.getElementById("inputCity"),
+      document.getElementById("inputPhoneNo"),
       document.getElementById("inputAddress"),
       document.getElementById("inputEmail"),
       document.getElementById("inputPC")
@@ -70,7 +70,7 @@ function allInfoIsValid() {
     elements.push(
         document.getElementById("Firstname"),
         document.getElementById("Surname"),
-        document.getElementById("City"),
+        document.getElementById("PhoneNo"),
         document.getElementById("Address"),
         document.getElementById("Email"),
         document.getElementById("PC")
@@ -80,7 +80,6 @@ function allInfoIsValid() {
   let isValid = false;
 
   elements.forEach(element => {
-    alert(element.id);
     if(validate(element))
     {
       isValid = true;
@@ -93,32 +92,6 @@ function allInfoIsValid() {
 
   return isValid;
 }
-
-function validate(element){
-
-  regex = new RegExp(element.getAttribute("pattern"));
-
-  if(regex.test(element.value) && element.value.length !== 0)
-  {
-    setMarker(element, true);
-    return true;
-  }
-  setMarker(element,false);
-  return false;
-}
-
-function setMarker(element, isValid) {
-  if(isValid)
-  {
-    element.classList.remove("is-invalid");
-    element.classList.add("is-valid");
-  }
-  else
-  {
-    element.classList.add("is-invalid");
-  }
-}
-
 
 function checkContact() {
   let checkContact = document.getElementById("contact-check");
@@ -164,8 +137,8 @@ function checkContact() {
     '</div>' +
     '<div class="form-row">' +
       '<div class="form-group col-md-6">' +
-        '<label for="inputCity">City</label>' +
-        '<input type="text" class="form-control" id="City" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
+        '<label for="inputPhoneNo">City</label>' +
+        '<input type="text" class="form-control" id="PhoneNo" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid city.' +
         '</div>' +

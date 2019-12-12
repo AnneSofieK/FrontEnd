@@ -15,6 +15,7 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
   <script src="../JS/DriverInfo.js" type="text/javascript"></script>
   <script src="../JS/LoginMenubar.js"></script>
+  <script src="../JS/Validation.js"></script>
 
   <meta charset="UTF-8">
   <title>Driver Information</title>
@@ -150,8 +151,8 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+            <label for="inputPhoneNo">City</label>
+            <input type="text" class="form-control" id="inputPhoneNo" pattern="^\d{8}$" required onfocusout="validate(this)">
             <div class="invalid-feedback">
               Invalid city.
             </div>

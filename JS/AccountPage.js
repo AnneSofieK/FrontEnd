@@ -74,7 +74,6 @@ function getDate(date) {
     date = new Date(date);
     year = date.getFullYear();
 
-    alert(date);
     let monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
