@@ -106,104 +106,135 @@
       </div>
       <div class="col-10">
         <form class="form">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Control Fee Notice No.</label>
-            <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" pattern="^\d{7}(?:\d{2})?$" onfocusout="validate(this)">
-            <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Control Fee Notice No.</label>
+                <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" pattern="^\d{7}$" onfocusout="validate(this)">
+                <small id="emailHelp" class="form-text text-muted">
+                  You can find your seven digit number on the top of your control fee notice.
+                </small>
+                <div class="invalid-feedback">
+                  Invalid control fee no. It should be seven digits
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">CVR of Parking Company</label>
+                <input id="cvr" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 64285971" pattern="^\d{8}$" onfocusout="validate(this)">
+                <small id="emailHelp" class="form-text text-muted">
+                  You can find your eight digit number on your control fee notice.
+                </small>
+                <div class="invalid-feedback">
+                  Invalid cvr. It should be eight digits
+                </div>
+            </div>
           </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputDriverName">Date issued</label>
+                <input type="text" class="form-control" id="date" pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" placeholder="dd/mm/yyyy" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Make sure is in the correct format dd/mm/yyyy. <br> Ex. 01/01/2019
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputDriverSurname">Control Fee Sum</label>
+                <input type="text" class="form-control" id="sum" pattern="^\d" required onfocusout="validate(this)">
+              </div>
+            </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Reason Code</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option value="01 You do not have a valid parking permit">
-                  01 You do not have a valid parking permit
-                </option>
-                <option value="02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant">
-                  02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant
-                </option>
-                <option value="03 You have parked outside the marked spaces, or you have parked inconveniently">
-                  03 You have parked outside the marked spaces, or you have parked inconveniently
-                </option>
-                <option value="04  You have parked somewhere on site where parking is prohibited">
-                  04  You have parked somewhere on site where parking is prohibited
-                </option>
-                <option value="05  Your have exceeded your parking time according to the time you set on your parking disc">
-                  05  Your have exceeded your parking time according to the time you set on your parking disc
-                </option>
-                <option value="06  You have no parking disc, it cannot be read, or you have more than one indication of time">
-                  06  You have no parking disc, it cannot be read, or you have more than one indication of time
-                </option>
-                <option value="07 You have reset your parking disc and continued to park">
-                  07 You have reset your parking disc and continued to park
-                </option>
-                <option value="08 Your parking ticket has expired or is invalid">
-                  08 Your parking ticket has expired or is invalid
-                </option>
-                <option value="09 You have no valid and verifiable payment to the parking area">
-                  09 You have no valid and verifiable payment to the parking area
-                </option>
-                <option value="10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit">
-                  10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit
-                </option>
-                <option value="11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited">
-                  11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited
-                </option>
-                <option value="12 You have parked in violation of one of the signposted parking rules">
-                  12 You have parked in violation of one of the signposted parking rules
-                </option>
-              </select> 
-            <small id="emailHelp" class="form-text text-muted">The code is a number between 1 and 12. You can find it under "Reason" just below the control fee notice number.
+              <option value="01 You do not have a valid parking permit">
+                01 You do not have a valid parking permit
+              </option>
+              <option value="02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant">
+                02 Your parking permit is invalid, has expired or cannot be verified by the parking attendant
+              </option>
+              <option value="03 You have parked outside the marked spaces, or you have parked inconveniently">
+                03 You have parked outside the marked spaces, or you have parked inconveniently
+              </option>
+              <option value="04  You have parked somewhere on site where parking is prohibited">
+                04  You have parked somewhere on site where parking is prohibited
+              </option>
+              <option value="05  Your have exceeded your parking time according to the time you set on your parking disc">
+                05  Your have exceeded your parking time according to the time you set on your parking disc
+              </option>
+              <option value="06  You have no parking disc, it cannot be read, or you have more than one indication of time">
+                06  You have no parking disc, it cannot be read, or you have more than one indication of time
+              </option>
+              <option value="07 You have reset your parking disc and continued to park">
+                07 You have reset your parking disc and continued to park
+              </option>
+              <option value="08 Your parking ticket has expired or is invalid">
+                08 Your parking ticket has expired or is invalid
+              </option>
+              <option value="09 You have no valid and verifiable payment to the parking area">
+                09 You have no valid and verifiable payment to the parking area
+              </option>
+              <option value="10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit">
+                10 You have stopped or parked in a disabled parking space without a valid and verifiable disabled parking permit
+              </option>
+              <option value="11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited">
+                11 You have stopped or parked on a fire and rescue access road where parking and stopping are prohibited
+              </option>
+              <option value="12 You have parked in violation of one of the signposted parking rules">
+                12 You have parked in violation of one of the signposted parking rules
+              </option>
+            </select>
+            <small id="emailHelp" class="form-text text-muted">
+              The code is a number between 1 and 12. You can find it under "Reason" just below the control fee notice number.
             </small>
           </div>
           <div class="form-group">
-              <label for="exampleInputLicense">License Plate</label>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button id="plateCountry" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >DK</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" value="DK" onclick="changeRegex(this)">DK</a>
-                    <a class="dropdown-item" value="D" onclick="changeRegex(this)">D</a>
-                    <a class="dropdown-item" value="S" onclick="changeRegex(this)">S</a>
-                  </div>
+            <label for="exampleInputLicense">License Plate</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button id="plateCountry" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >DK</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" value="DK" onclick="changeRegex(this)">DK</a>
+                  <a class="dropdown-item" value="D" onclick="changeRegex(this)">D</a>
+                  <a class="dropdown-item" value="S" onclick="changeRegex(this)">S</a>
                 </div>
-                <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" pattern="^[a-zA-Z]{2}\d{5}$" onfocusout="validate(this)">
+              </div>
+              <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" pattern="^[a-zA-Z]{2}\d{5}$" onfocusout="validate(this)">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputDriverName">Observation Start</label>
+              <input type="text" class="form-control" id="inputDriverName" pattern="^([0-1][0-9]|[2][0-3]):([0-5][0-9])$" placeholder="hh:mm" required onfocusout="validate(this)">
+              <div class="invalid-feedback">
+                Make sure is in the correct format hh:mm. <br> Ex. 08:00
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverName">Observation Start</label>
-                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
-                <div class="invalid-feedback">
-                  Invalid firstname.
-                </div>
-              </div>
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverSurname">Observation End</label>
-                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
-                <div class="invalid-feedback">
-                  Invalid surname.
-                </div>
+            <div class="form-group col-md-6">
+              <label for="inputDriverSurname">Observation End</label>
+              <input type="text" class="form-control" id="inputDriverSurname" pattern="^([0-1][0-9]|[2][0-3]):([0-5][0-9])$" placeholder="hh:mm" required onfocusout="validate(this)">
+              <div class="invalid-feedback">
+                Make sure is in the correct format hh:mm. <br> Ex. 08:00
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverName">Street</label>
-                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
-                <div class="invalid-feedback">
-                  Invalid firstname.
-                </div>
-              </div>
-              <div class="form-group col-md-6" id="caption-container">
-                <label for="inputDriverSurname">Zipcode</label>
-                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
-                <div class="invalid-feedback">
-                  Invalid surname.
-                </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputDriverName">Parking Address</label>
+              <input type="text" class="form-control" id="parkingAddress" pattern="^[a-zA-Z0-9ÆØÅæøå.\s]*$" required onfocusout="validate(this)">
+              <div class="invalid-feedback">
+                Invalid address.
               </div>
             </div>
-            <div class="buttons">
-              <a class="btn btn-primary btn-lg active" onclick="saveTicketInfo()">Continue</a>
-              <a class="btn btn-link" href="Attachments.html">Back</a>
+            <div class="form-group col-md-6">
+              <label for="inputDriverSurname">Parking Post Code</label>
+              <input type="text" class="form-control" id="parkingPC" pattern="^\d{4}$" required onfocusout="validate(this)">
+              <div class="invalid-feedback">
+                Invalid postal code. It should be four digits
+              </div>
             </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-primary btn-lg active" onclick="saveTicketInfo()">Continue</a>
+            <a class="btn btn-link" href="Attachments.html">Back</a>
+          </div>
         </form>
       </div>
     </div>
