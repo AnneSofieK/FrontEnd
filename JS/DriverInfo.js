@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  //Checks if the information already has been filled out
+  //Checks if the information already has been filled out. If it has, then it displays the already inserted information
   if(sessionStorage.getItem("driverName") != null)
   {
     document.getElementById("inputDriverName").value = sessionStorage.getItem("driverName");
@@ -9,6 +9,7 @@ $(document).ready(function () {
     document.getElementById("inputPhoneNo").value = sessionStorage.getItem("driverPhoneNo");
     document.getElementById("inputEmail").value = sessionStorage.getItem("driverEmail");
 
+    //Checks if the customer and driver was different. If yes, customer information is displayed
     if(sessionStorage.getItem("Firstname") != null)
     {
       document.getElementById("contact-check").checked = false;
@@ -20,13 +21,17 @@ $(document).ready(function () {
       document.getElementById("PhoneNo").value = sessionStorage.getItem("PhoneNo");
       document.getElementById("Email").value = sessionStorage.getItem("Email");
     }
+    //Set the style on all the inputfields
     allDriverInfoIsValid();
   }
 });
 
-//Click function for continue button on step 3 in the form
+/**
+ * Saves all the driver information in the session storage
+ */
 function saveDriverInfo() {
 
+  //Checks that all the inputs is valid before saving them
   if(allDriverInfoIsValid()) {
 
     //Saving all driverInformation
@@ -53,6 +58,10 @@ function saveDriverInfo() {
   }
 }
 
+/**
+ * Checks if all the input elements values is valid
+ * @returns {boolean} - true/false depending on if all the elements input is valid
+ */
 function allDriverInfoIsValid() {
   let elements = [
       document.getElementById("inputDriverName"),
@@ -75,11 +84,14 @@ function allDriverInfoIsValid() {
         document.getElementById("PC")
     );
   }
-
-  validateElements(elements);
+  return validateElements(elements);
 }
 
-
+/**
+ * Checks if the customer checked off that the driver info is the same as the customer info
+ * If the customer checked it off, new input elements is inserted and displayed
+ * If the customer checks it on again, the new input elements is removed
+ */
 function checkContact() {
   let checkContact = document.getElementById("contact-check");
 
