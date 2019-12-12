@@ -22,3 +22,20 @@ function setMarker(element, isValid) {
         element.classList.add("is-invalid");
     }
 }
+
+function validateElements(elements)
+{
+    let isValid = false;
+
+    elements.forEach(element => {
+        if(validate(element))
+        {
+            isValid = true;
+        }
+        else
+        {
+            isValid = false;
+        }
+    });
+    return isValid;
+}
