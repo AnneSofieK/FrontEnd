@@ -168,6 +168,38 @@
                 <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" pattern="^[a-zA-Z]{2}\d{5}$" onfocusout="validate(this)">
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverName">Observation Start</label>
+                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid firstname.
+                </div>
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverSurname">Observation End</label>
+                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid surname.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverName">Street</label>
+                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid firstname.
+                </div>
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverSurname">Zipcode</label>
+                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid surname.
+                </div>
+              </div>
+            </div>
             <div class="buttons">
               <a class="btn btn-primary btn-lg active" onclick="saveTicketInfo()">Continue</a>
               <a class="btn btn-link" href="Attachments.html">Back</a>
