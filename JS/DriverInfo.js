@@ -20,15 +20,14 @@ $(document).ready(function () {
       document.getElementById("PhoneNo").value = sessionStorage.getItem("PhoneNo");
       document.getElementById("Email").value = sessionStorage.getItem("Email");
     }
-    allInfoIsValid();
+    allDriverInfoIsValid();
   }
-
 });
 
 //Click function for continue button on step 3 in the form
 function saveDriverInfo() {
 
-  if(allInfoIsValid()) {
+  if(allDriverInfoIsValid()) {
 
     //Saving all driverInformation
     sessionStorage.setItem("driverName", document.getElementById("inputDriverName").value);
@@ -54,7 +53,7 @@ function saveDriverInfo() {
   }
 }
 
-function allInfoIsValid() {
+function allDriverInfoIsValid() {
   let elements = [
       document.getElementById("inputDriverName"),
       document.getElementById("inputDriverSurname"),
@@ -77,21 +76,9 @@ function allInfoIsValid() {
     );
   }
 
-  let isValid = false;
-
-  elements.forEach(element => {
-    if(validate(element))
-    {
-      isValid = true;
-    }
-    else
-    {
-      isValid = false;
-    }
-  });
-
-  return isValid;
+  validateElements(elements);
 }
+
 
 function checkContact() {
   let checkContact = document.getElementById("contact-check");
@@ -137,10 +124,10 @@ function checkContact() {
     '</div>' +
     '<div class="form-row">' +
       '<div class="form-group col-md-6">' +
-        '<label for="inputPhoneNo">City</label>' +
+        '<label for="inputPhoneNo">Phone no.</label>' +
         '<input type="text" class="form-control" id="PhoneNo" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
-          'Invalid city.' +
+          'Invalid phone number.' +
         '</div>' +
       '</div>' +
       '<div class="form-group col-md-6">' +

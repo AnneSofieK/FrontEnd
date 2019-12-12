@@ -1,14 +1,14 @@
 function sendClaim() {
 
-    let ticketNo = sessionStorage.getItem("ticketNo");
+    let ticketNo = parseInt(sessionStorage.getItem("ticketNo"));
     let fineSum = sessionStorage.getItem("fineSum");
     let date = sessionStorage.getItem("date");
-    let reason = sessionStorage.getItem("reason");
+    let reason = sessionStorage.getItem("reasonCode");
     let obsStart = sessionStorage.getItem("obsStart");
     let obsEnd = sessionStorage.getItem("obsEnd");
     let status = "Claim received";
-    let customerID = sessionStorage.getItem("customerID");
-    let cvr = sessionStorage.getItem("cvr");
+    let customerID = parseInt(sessionStorage.getItem("customerID"));
+    let cvr = parseInt(sessionStorage.getItem("cvr"));
     let isManuel = false;
     let zip = parseInt(sessionStorage.getItem("parkingZip"));
     let streetName = sessionStorage.getItem("parkingStreet");
