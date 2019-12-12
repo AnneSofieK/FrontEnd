@@ -15,6 +15,7 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" rel="stylesheet"></script>
   <script src="../JS/LoginMenubar.js"></script>
   <script src="../JS/TicketInfo.js"></script>
+  <script src="../JS/Validation.js"></script>
 
   <meta charset="UTF-8">
   <title>Ticket Information</title>
@@ -107,7 +108,7 @@
         <form class="form">
           <div class="form-group">
             <label for="exampleInputEmail1">Control Fee Notice No.</label>
-            <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" onfocusout="validateControlNo()">
+            <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" pattern="^\d{7}(?:\d{2})?$" onfocusout="validate(this)">
             <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
           </div>
           <div class="form-group">
@@ -157,14 +158,14 @@
               <label for="exampleInputLicense">License Plate</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <button id="plateCountry" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DK</button>
+                  <button id="plateCountry" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >DK</button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" value="DK">DK</a>
-                    <a class="dropdown-item" value="D">D</a>
-                    <a class="dropdown-item" value="S">S</a>
+                    <a class="dropdown-item" value="DK" onclick="changeRegex(this)">DK</a>
+                    <a class="dropdown-item" value="D" onclick="changeRegex(this)">D</a>
+                    <a class="dropdown-item" value="S" onclick="changeRegex(this)">S</a>
                   </div>
                 </div>
-                <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" onfocusout="validateLicensePlate()">
+                <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" pattern="^[a-zA-Z]{2}\d{5}$" onfocusout="validate(this)">
               </div>
             </div>
             <div class="buttons">
