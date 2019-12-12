@@ -105,10 +105,27 @@
       </div>
       <div class="col-10">
         <form class="form">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Control Fee Notice No.</label>
-            <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" onfocusout="validateControlNo()">
-            <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
+          <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="exampleInputEmail1">Control Fee Notice No.</label>
+                <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 2506485" onfocusout="validateControlNo()">
+                <small id="emailHelp" class="form-text text-muted">You can find your seven digit number on the top of your control fee notice.</small>
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="exampleInputEmail1">CVR of parking company</label>
+                <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. 68547928" onfocusout="validateControlNo()">
+                <small id="emailHelp" class="form-text text-muted">You can find your eight digit number on the top of your control fee notice.</small>  
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="exampleInputEmail1">Fine Sum</label>
+                <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onfocusout="validateControlNo()">
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="exampleInputEmail1">Date</label>
+                <input id="controlNo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onfocusout="validateControlNo()">
+              </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Reason Code</label>
@@ -165,6 +182,38 @@
                   </div>
                 </div>
                 <input id="licensePlate" type="text" class="form-control" aria-label="Text input with dropdown button" onfocusout="validateLicensePlate()">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverName">Observation Start</label>
+                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid firstname.
+                </div>
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverSurname">Observation End</label>
+                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid surname.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverName">Street</label>
+                <input type="text" class="form-control" id="inputDriverName" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid firstname.
+                </div>
+              </div>
+              <div class="form-group col-md-6" id="caption-container">
+                <label for="inputDriverSurname">Zipcode</label>
+                <input type="text" class="form-control" id="inputDriverSurname" pattern="^[a-zA-ZÆØÅæøå\s]*$" required onfocusout="validate(this)">
+                <div class="invalid-feedback">
+                  Invalid surname.
+                </div>
               </div>
             </div>
             <div class="buttons">
