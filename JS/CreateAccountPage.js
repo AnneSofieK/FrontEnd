@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //Sets the email to the already registered email
     if(sessionStorage.getItem("Email") !== null)
     {
         document.getElementById("loginEmail").value = sessionStorage.getItem("Email");
@@ -17,14 +18,14 @@ $(document).ready(function () {
 
         if(validate(password))
         {
-            let data = {firstname: "customer", lastname: "customer", username: username.value, password: password.value, role: "Customer"};
+            let data = {username: username.value, password: password.value};
             $.ajax({
-                url: "http://localhost:5000/users/register",
+                url: "http://localhost:5000/users/registerCustomerUser",
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 success: function () {
-                    sendClaim();
+                    createCustomer(true);
                 },
                 error: function(){
                     document.getElementById("loginPassword").value = "";

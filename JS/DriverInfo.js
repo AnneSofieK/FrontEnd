@@ -96,6 +96,7 @@ function checkContact() {
   let checkContact = document.getElementById("contact-check");
 
   if(checkContact.checked == false){
+    sessionStorage.setItem("isChecked", true);
     var buttons = document.getElementsByClassName("buttons");
     buttons[0].insertAdjacentHTML("beforebegin",
     '<div id="optional">'+
@@ -137,7 +138,7 @@ function checkContact() {
     '<div class="form-row">' +
       '<div class="form-group col-md-6">' +
         '<label for="inputPhoneNo">Phone no.</label>' +
-        '<input type="text" class="form-control" id="PhoneNo" pattern="^[a-zA-ZÆØÅæøå\\s]*$" required onfocusout="validate(this)">' +
+        '<input type="text" class="form-control" id="PhoneNo" pattern="^\\d{8}$" required onfocusout="validate(this)">' +
         '<div class="invalid-feedback">' +
           'Invalid phone number.' +
         '</div>' +
@@ -154,6 +155,7 @@ function checkContact() {
     );
   }
   else{
+    sessionStorage.setItem("isChecked", false);
     let optional = document.getElementById("optional");
     optional.parentNode.removeChild(optional);
   }

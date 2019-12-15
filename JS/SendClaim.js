@@ -4,18 +4,21 @@
 function sendClaim() {
 
     //All claim info
-    let ticketNo = parseInt(sessionStorage.getItem("ticketNo"));
-    let fineSum = parseInt(sessionStorage.getItem("fineSum"));
+    let ticketNo = parseInt(sessionStorage.getItem("controlNo"));
+    let fineSum = parseInt(sessionStorage.getItem("sum"));
     let date = sessionStorage.getItem("date");
     let reason = sessionStorage.getItem("reasonCode");
-    let obsStart = sessionStorage.getItem("obsStart");
-    let obsEnd = sessionStorage.getItem("obsEnd");
+    let obsStart = sessionStorage.getItem("observationStart");
+    let obsEnd = sessionStorage.getItem("observationEnd");
     let status = "Claim received";
-    let zip = parseInt(sessionStorage.getItem("parkingZip"));
-    let street = sessionStorage.getItem("parkingStreet");
+    let zip = parseInt(sessionStorage.getItem("parkingPC"));
+    let street = sessionStorage.getItem("parkingAddress");
     let customerID = parseInt(sessionStorage.getItem("customerID"));
     let cvr = parseInt(sessionStorage.getItem("cvr"));
     let isManuel = false;
+
+    //let licensePlate = sessionStorage.getItem("licensePlate");
+    alert("customerID: "+customerID);
 
     let data = {ticketNo: ticketNo, fineSum: fineSum, date: date, reason: reason, obsStart: obsStart, obsEnd: obsEnd,
         status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zip: zip, street: street};
@@ -30,7 +33,7 @@ function sendClaim() {
             location.href="ClaimSent.html";
         },
         error: function(){
-            alert("Something went wrong, try again");
+            alert("(Claim) Something went wrong, try again");
         }
     });
 }
@@ -47,6 +50,7 @@ function createCustomer(createAccountIsChecked) {
     var phoneNo = parseInt(sessionStorage.getItem("driverPhoneNo"));
     var streetName = sessionStorage.getItem("driverAddress");
     var zip = parseInt(sessionStorage.getItem("driverPC"));
+    var username = email;
 
     //If the driver was different from the customer filling out the form, the data is changed to the customer info
     if(sessionStorage.getItem("Firstname") !== null)
@@ -56,9 +60,15 @@ function createCustomer(createAccountIsChecked) {
         phoneNo = parseInt(sessionStorage.getItem("PhoneNo"));
         streetName = sessionStorage.getItem("Address");
         zip = parseInt(sessionStorage.getItem("PC"));
+        username = email;
     }
 
-    let data = {Name: name, Email: email, PhoneNo: phoneNo, StreetName: streetName, username: email, zip: zip};
+    if(!createAccountIsChecked)
+    {
+        username = null;
+    }
+
+    let data = {Name: name, Email: email, PhoneNo: phoneNo, StreetName: streetName, zip: zip, username: username};
 
     //Creating the customer in the database
     $.ajax({
@@ -67,16 +77,11 @@ function createCustomer(createAccountIsChecked) {
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            sessionStorage.setItem("customerID", data.customerID);
-            if(createAccountIsChecked){
-                location.href = "CreateAccountPage.html"
-            }
-            else{
-                sendClaim();
-            }
+            sessionStorage.setItem("customerID", data.customerId);
+            sendClaim();
         },
         error: function(){
-            alert("Something went wrong, try again");
+            alert("(Customer) Something went wrong, try again");
         }
     });
 }

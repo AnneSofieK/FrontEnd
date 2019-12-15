@@ -13,7 +13,7 @@ $(document).ready(function () {
     document.getElementById("driverSurname").innerHTML = sessionStorage.getItem("driverSurname");
     document.getElementById("driverAddress").innerText = sessionStorage.getItem("driverAddress");
     document.getElementById("driverPC").innerText = sessionStorage.getItem("driverPC");
-    document.getElementById("driverCity").innerText = sessionStorage.getItem("driverCity");
+    document.getElementById("driverPhoneNo").innerText = sessionStorage.getItem("driverPhoneNo");
     document.getElementById("driverEmail").innerText = sessionStorage.getItem("driverEmail");
 
     var images = document.getElementsByClassName("imagePreview");
@@ -29,7 +29,12 @@ $(document).ready(function () {
 });
 
 function send_Claim() {
-    createCustomer(document.getElementById("account-check").checked);
+    if(document.getElementById("account-check").checked){
+       location.href = "CreateAccountPage.html";
+    }
+    else{
+        createCustomer(false);
+    }
 }
 
 function addImg(){
