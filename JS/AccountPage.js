@@ -4,7 +4,8 @@ $(document).ready(function(){
     $.ajax({
         type: "GET",
         dataType: "json",
-        url:"http://localhost:5000/customers/getSpecificCustomer/"+sessionStorage.getItem("username")
+        url:"http://localhost:5000/customers/getSpecificCustomer/"+sessionStorage.getItem("username"),
+        headers: {"Authorization": 'Bearer '+sessionStorage.getItem("token")}
     }).then(function (data) {
         sessionStorage.setItem("name", data.name);
         document.getElementById("login").append(data.name);
@@ -13,7 +14,8 @@ $(document).ready(function(){
         document.getElementById("phoneno").append(data.phoneNo);
         document.getElementById("address").append(data.streetName);
         document.getElementById("zip").append(data.zip+" "+data.city);
-        getCases(data.customerID);
+        sessionStorage.setItem("customerID", data.customerID);
+        getCases();
     });
 });
 
@@ -21,12 +23,13 @@ $(document).ready(function(){
  *
  * @param customerID
  */
-function getCases(customerID) {
+function getCases() {
     <!-- get all user cases -->
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "http://localhost:5000/cases/getspecific/" + customerID
+        url: "http://localhost:5000/cases/getspecific/" + sessionStorage.getItem("customerID"),
+        headers: {"Authorization": 'Bearer '+sessionStorage.getItem('token')}
     }).then(function (data) {
         for (let i = 0; i < data.length; i++) {
             addCase(data[i], i);
@@ -66,7 +69,7 @@ function addCase(data, i)
     $(document.getElementsByClassName("status")[i]).append(data.status);
     $(document.getElementsByClassName("street")[i]).append(data.street);
     $(document.getElementsByClassName("boxheader")[i]).append(data.zip+" "+data.city);
-    $(document.getElementsByClassName("date")[i]).append(getDate(data.date));
+    $(document.getElementsByClassName("date")[i]).append(data.date);
 
     let value;
     switch (data.status) {
@@ -76,29 +79,11 @@ function addCase(data, i)
         case "Won":
         case "Lost":
             value = 5;
+            break;
         default:
             value = 3;
     }
-    $(document.getElementsByClassName("progressbar")[i]).val(3);
-}
-
-function getDate(date) {
-    date = new Date(date);
-    year = date.getFullYear();
-
-    let monthNames = ["", "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"];
-
-    month = monthNames[date.getMonth()];
-    dt = date.getDate();
-
-    if (dt < 10) {
-        dt = '0' + dt;
-    }
-    if (month < 10) {
-        month = '0' + month;
-    }
-    return dt+". "+month+" "+year;
+    $(document.getElementsByClassName("progressbar")[i]).val(value);
 }
 
 function deleteAccount() {
@@ -107,7 +92,8 @@ function deleteAccount() {
         $.ajax({
             url: "http://localhost:5000/users/DeleteCustomerUser/"+sessionStorage.getItem("username"),
             type: 'DELETE',
-            success: function(result) {
+            headers: {"Authorization": 'Bearer '+sessionStorage.getItem('token')},
+            success: function() {
                 sessionStorage.removeItem("token");
                 location.href = "HomePage.html";
             }

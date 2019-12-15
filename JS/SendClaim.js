@@ -18,6 +18,7 @@ function sendClaim() {
     let isManuel = false;
 
     //let licensePlate = sessionStorage.getItem("licensePlate");
+    alert("customerID: "+customerID);
 
     let data = {ticketNo: ticketNo, fineSum: fineSum, date: date, reason: reason, obsStart: obsStart, obsEnd: obsEnd,
         status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zip: zip, street: street};
@@ -76,7 +77,7 @@ function createCustomer(createAccountIsChecked) {
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            sessionStorage.setItem("customerID", data.customerID);
+            sessionStorage.setItem("customerID", data.customerId);
             sendClaim();
         },
         error: function(){
