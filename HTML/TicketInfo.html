@@ -129,18 +129,18 @@
             </div>
           </div>
           <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputDriverName">Date issued</label>
-                <input type="text" class="form-control" id="date" pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" placeholder="dd/mm/yyyy" required onfocusout="validate(this)">
-                <div class="invalid-feedback">
-                  Make sure is in the correct format dd/mm/yyyy. <br> Ex. 01/01/2019
-                </div>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputDriverSurname">Control Fee Sum</label>
-                <input type="text" class="form-control" id="sum" pattern="^\d" required onfocusout="validate(this)">
+            <div class="form-group col-md-6">
+              <label for="inputDriverName">Date issued</label>
+              <input type="text" class="form-control" id="date" pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" placeholder="dd/mm/yyyy" required onfocusout="validate(this)">
+              <div class="invalid-feedback">
+                Make sure is in the correct format dd/mm/yyyy. <br> Ex. 01/01/2019
               </div>
             </div>
+            <div class="form-group col-md-6">
+              <label for="inputDriverSurname">Control Fee Sum</label>
+              <input type="text" class="form-control" id="sum" pattern="^\d" required onfocusout="validate(this)">
+            </div>
+          </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Reason Code</label>
             <select class="form-control" id="reasonCode">

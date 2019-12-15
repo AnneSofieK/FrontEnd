@@ -1,31 +1,20 @@
 $(document).ready(function () {
-
-    let controlNo = document.getElementById("controlNo");
-    controlNo.innerText = sessionStorage.getItem("controlNo");
-
-    let licensePlate = document.getElementById("licensePlate");
-    licensePlate.innerText = sessionStorage.getItem("licensePlate");
-
-    let reasonCode = document.getElementById("reasonCode");
-    reasonCode.innerText = sessionStorage.getItem("reasonCode");
-
-    let driverName = document.getElementById("driverName");
-    driverName.innerText = sessionStorage.getItem("driverName");
-    
-    let driverSurname = document.getElementById("driverSurname");
-    driverSurname.innerText = sessionStorage.getItem("driverSurname");
-
-    let driverAddress = document.getElementById("driverAddress");
-    driverAddress.innerText = sessionStorage.getItem("driverAddress");
-
-    let driverPC = document.getElementById("driverPC");
-    driverPC.innerText = sessionStorage.getItem("driverPC");
-
-    let driverCity = document.getElementById("driverCity");
-    driverCity.innerText = sessionStorage.getItem("driverCity");
-
-    let driverEmail = document.getElementById("driverEmail");
-    driverEmail.innerText = sessionStorage.getItem("driverEmail");
+    document.getElementById("controlNo").innerText = sessionStorage.getItem("controlNo");
+    document.getElementById("reasonCode").innerText = sessionStorage.getItem("reasonCode");
+    document.getElementById("licensePlate").innerText = sessionStorage.getItem("licensePlate");
+    document.getElementById("cvr").innerText = sessionStorage.getItem("cvr");
+    document.getElementById("date").innerText = sessionStorage.getItem("date");
+    document.getElementById("sum").innerText = sessionStorage.getItem("sum");
+    document.getElementById("observationStart").innerText = sessionStorage.getItem("observationStart");
+    document.getElementById("observationEnd").innerText = sessionStorage.getItem("observationEnd");
+    document.getElementById("parkingAddress").innerText = sessionStorage.getItem("parkingAddress");
+    document.getElementById("parkingPC").innerText = sessionStorage.getItem("parkingPC");
+    document.getElementById("driverName").innerText = sessionStorage.getItem("driverName");
+    document.getElementById("driverSurname").innerHTML = sessionStorage.getItem("driverSurname");
+    document.getElementById("driverAddress").innerText = sessionStorage.getItem("driverAddress");
+    document.getElementById("driverPC").innerText = sessionStorage.getItem("driverPC");
+    document.getElementById("driverCity").innerText = sessionStorage.getItem("driverCity");
+    document.getElementById("driverEmail").innerText = sessionStorage.getItem("driverEmail");
 
     var images = document.getElementsByClassName("imagePreview");
     var imagesS = JSON.parse(sessionStorage.getItem("images"));
