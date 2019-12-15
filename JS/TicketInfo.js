@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Checks if the information already has been filled out
-    if(sessionStorage.getItem("controlNo") != null) //TODO add new info
+    if(sessionStorage.getItem("controlNo") != null)
     {
         document.getElementById("controlNo").value = sessionStorage.getItem("controlNo");
         document.getElementById("reasonCode").value = sessionStorage.getItem("reasonCode");
@@ -25,7 +25,7 @@ $(document).ready(function () {
 //Click function for next button on step 2 in the form
 function saveTicketInfo()
 {
-    if(allTicketInfoIsValid()) //TODO add all new info so it can be saved
+    if(allTicketInfoIsValid())
     {
         //Saving all ticket info
         sessionStorage.setItem("controlNo", document.getElementById("controlNo").value);
@@ -51,7 +51,7 @@ function saveTicketInfo()
     }
 }
 
-function allTicketInfoIsValid() { //TODO add ticket info elements
+function allTicketInfoIsValid() {
     let elements = [
         document.getElementById("controlNo"),
         document.getElementById("cvr"),

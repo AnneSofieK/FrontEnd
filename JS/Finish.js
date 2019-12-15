@@ -40,7 +40,12 @@ $(document).ready(function () {
 });
 
 function send_Claim() {
-    createCustomer(document.getElementById("account-check").checked);
+    if(document.getElementById("account-check").checked){
+       location.href = "CreateAccountPage.html";
+    }
+    else{
+        createCustomer(false);
+    }
 }
 
 function addImg(){

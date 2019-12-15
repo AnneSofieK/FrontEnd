@@ -17,6 +17,10 @@ $(document).ready(function(){
     });
 });
 
+/**
+ *
+ * @param customerID
+ */
 function getCases(customerID) {
     <!-- get all user cases -->
     $.ajax({

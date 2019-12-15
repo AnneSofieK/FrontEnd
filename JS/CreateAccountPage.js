@@ -24,7 +24,7 @@ $(document).ready(function () {
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 success: function () {
-                    sendClaim();
+                    createCustomer(true);
                 },
                 error: function(){
                     document.getElementById("loginPassword").value = "";
