@@ -49,13 +49,18 @@ $(document).on("click", "i.del" , function() {
 function loadImg(element) {
     if (element.files[0]) {
         if (/^image/.test( element.files[0].type)){
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                element.parentElement.parentElement.querySelector(".imagePreview").src =  e.target.result;
+            let size = Math.round((element.files[0].size/1048576));
+            if(size > 4){
+                alert("The size of the image is too big. It should be less than 4 MB.")
             }
+            else{
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    element.parentElement.parentElement.querySelector(".imagePreview").src =  e.target.result;
+                }
 
-            reader.readAsDataURL(element.files[0]);
+                reader.readAsDataURL(element.files[0]);
+            }
         }
         else{
             alert("You can only upload pictures");
