@@ -20,7 +20,7 @@ $(document).ready(function () {
         {
             let data = {username: username.value, password: password.value};
             $.ajax({
-                url: "http://localhost:5000/users/registerCustomerUser",
+                url: "https://localhost:44324/users/registerCustomerUser",
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",

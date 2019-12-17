@@ -7,12 +7,12 @@ $(document).ready(function(){
         let data = {username: username, password: password};
 
         $.ajax({
-            url: "http://localhost:5000/users/authenticate",
+            url: "https://localhost:44324/users/authenticate",
             type: 'POST',
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                sessionStorage.setItem("token",data.token);
+                sessionStorage.setItem("token",data.Token);
                 sessionStorage.setItem("username",username);
                 location.href="AccountPage.html";
             },
