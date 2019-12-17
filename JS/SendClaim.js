@@ -18,10 +18,10 @@ function sendClaim() {
     let isManuel = false;
 
     //let licensePlate = sessionStorage.getItem("licensePlate");
-    alert("customerID: "+customerID);
+    alert("customerID before posting claim: "+customerID);
 
     let data = {ticketNo: ticketNo, fineSum: fineSum, date: date, reason: reason, obsStart: obsStart, obsEnd: obsEnd,
-        status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zip: zip, street: street};
+        status: status, customerID: customerID, cvr: cvr, isManuel: isManuel, zipCode: zip, street: street};
 
     //creating claim in the database
     $.ajax({
@@ -68,7 +68,7 @@ function createCustomer(createAccountIsChecked) {
         username = null;
     }
 
-    let data = {Name: name, Email: email, PhoneNo: phoneNo, StreetName: streetName, zip: zip, username: username};
+    let data = {Name: name, Email: email, PhoneNo: phoneNo, StreetName: streetName, zipCode: zip, username: username};
 
     //Creating the customer in the database
     $.ajax({
@@ -77,7 +77,7 @@ function createCustomer(createAccountIsChecked) {
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            sessionStorage.setItem("customerID", data.CustomerID);
+            sessionStorage.setItem("customerID", data.customerId);
             sendClaim();
         },
         error: function(){
