@@ -25,7 +25,7 @@ function sendClaim() {
 
     //creating claim in the database
     $.ajax({
-        url: "http://localhost:5000/cases",
+        url: "https://localhost:44324/cases",
         type: 'POST',
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
@@ -72,12 +72,12 @@ function createCustomer(createAccountIsChecked) {
 
     //Creating the customer in the database
     $.ajax({
-        url: "http://localhost:5000/customers",
+        url: "https://localhost:44324/customers",
         type: 'POST',
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            sessionStorage.setItem("customerID", data.customerId);
+            sessionStorage.setItem("customerID", data.CustomerID);
             sendClaim();
         },
         error: function(){

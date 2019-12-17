@@ -4,17 +4,17 @@ $(document).ready(function(){
     $.ajax({
         type: "GET",
         dataType: "json",
-        url:"http://localhost:5000/customers/getSpecificCustomer/"+sessionStorage.getItem("username"),
+        url:"https://localhost:44324/customers/getSpecificCustomer/"+sessionStorage.getItem("username"),
         headers: {"Authorization": 'Bearer '+sessionStorage.getItem("token")}
     }).then(function (data) {
         sessionStorage.setItem("name", data.name);
-        document.getElementById("login").append(data.name);
-        document.getElementById("username").append(data.name);
-        document.getElementById("email").append(data.email);
-        document.getElementById("phoneno").append(data.phoneNo);
-        document.getElementById("address").append(data.streetName);
-        document.getElementById("zip").append(data.zip+" "+data.city);
-        sessionStorage.setItem("customerID", data.customerID);
+        document.getElementById("login").append(data.Name);
+        document.getElementById("username").append(data.Name);
+        document.getElementById("email").append(data.Email);
+        document.getElementById("phoneno").append(data.PhoneNo);
+        document.getElementById("address").append(data.StreetName);
+        document.getElementById("zip").append(data.ZipCode+" "+data.City);
+        sessionStorage.setItem("customerID", data.CustomerID);
         getCases();
     });
 });
@@ -28,7 +28,7 @@ function getCases() {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "http://localhost:5000/cases/getspecific/" + sessionStorage.getItem("customerID"),
+        url: "https://localhost:44324/cases/getspecific/" + sessionStorage.getItem("customerID"),
         headers: {"Authorization": 'Bearer '+sessionStorage.getItem('token')}
     }).then(function (data) {
         for (let i = 0; i < data.length; i++) {
@@ -65,14 +65,14 @@ function addCase(data, i)
         "   </div>\n" +
         "</td>";
 
-    $(document.getElementsByClassName("header")[i]).append(data.caseID);
-    $(document.getElementsByClassName("status")[i]).append(data.status);
-    $(document.getElementsByClassName("street")[i]).append(data.street);
-    $(document.getElementsByClassName("boxheader")[i]).append(data.zip+" "+data.city);
-    $(document.getElementsByClassName("date")[i]).append(data.date);
+    $(document.getElementsByClassName("header")[i]).append(data.CaseID);
+    $(document.getElementsByClassName("status")[i]).append(data.Status);
+    $(document.getElementsByClassName("street")[i]).append(data.Street);
+    $(document.getElementsByClassName("boxheader")[i]).append(data.ZipCode+" "+data.City);
+    $(document.getElementsByClassName("date")[i]).append(data.Date);
 
     let value;
-    switch (data.status) {
+    switch (data.Status) {
         case "Claim received":
             value = 1;
             break;
@@ -90,7 +90,7 @@ function deleteAccount() {
     if(confirm("Your account will be deleted"))
     {
         $.ajax({
-            url: "http://localhost:5000/users/DeleteCustomerUser/"+sessionStorage.getItem("username"),
+            url: "https://localhost:44324/users/DeleteCustomerUser/"+sessionStorage.getItem("username"),
             type: 'DELETE',
             headers: {"Authorization": 'Bearer '+sessionStorage.getItem('token')},
             success: function() {
