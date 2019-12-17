@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    alert(sessionStorage.getItem("token"));
     <!-- display user information -->
     $.ajax({
         type: "GET",
@@ -8,13 +9,13 @@ $(document).ready(function(){
         headers: {"Authorization": 'Bearer '+sessionStorage.getItem("token")}
     }).then(function (data) {
         sessionStorage.setItem("name", data.name);
-        document.getElementById("login").append(data.Name);
-        document.getElementById("username").append(data.Name);
-        document.getElementById("email").append(data.Email);
-        document.getElementById("phoneno").append(data.PhoneNo);
-        document.getElementById("address").append(data.StreetName);
-        document.getElementById("zip").append(data.ZipCode+" "+data.City);
-        sessionStorage.setItem("customerID", data.CustomerID);
+        document.getElementById("login").append(data.name);
+        document.getElementById("username").append(data.name);
+        document.getElementById("email").append(data.email);
+        document.getElementById("phoneno").append(data.phoneNo);
+        document.getElementById("address").append(data.streetname);
+        document.getElementById("zip").append(data.zipCode+" "+data.city);
+        sessionStorage.setItem("customerID", data.customerID);
         getCases();
     });
 });
@@ -65,14 +66,14 @@ function addCase(data, i)
         "   </div>\n" +
         "</td>";
 
-    $(document.getElementsByClassName("header")[i]).append(data.CaseID);
-    $(document.getElementsByClassName("status")[i]).append(data.Status);
-    $(document.getElementsByClassName("street")[i]).append(data.Street);
-    $(document.getElementsByClassName("boxheader")[i]).append(data.ZipCode+" "+data.City);
-    $(document.getElementsByClassName("date")[i]).append(data.Date);
+    $(document.getElementsByClassName("header")[i]).append(data.caseID);
+    $(document.getElementsByClassName("status")[i]).append(data.status);
+    $(document.getElementsByClassName("street")[i]).append(data.street);
+    $(document.getElementsByClassName("boxheader")[i]).append(data.zipCode+" "+data.city);
+    $(document.getElementsByClassName("date")[i]).append(data.date);
 
     let value;
-    switch (data.Status) {
+    switch (data.status) {
         case "Claim received":
             value = 1;
             break;

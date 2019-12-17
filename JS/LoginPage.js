@@ -12,7 +12,7 @@ $(document).ready(function(){
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                sessionStorage.setItem("token",data.Token);
+                sessionStorage.setItem("token",data.token);
                 sessionStorage.setItem("username",username);
                 location.href="AccountPage.html";
             },
