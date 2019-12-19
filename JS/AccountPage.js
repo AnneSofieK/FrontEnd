@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-    alert(sessionStorage.getItem("token"));
     <!-- display user information -->
     $.ajax({
         type: "GET",
